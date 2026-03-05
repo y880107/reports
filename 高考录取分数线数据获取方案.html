@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>高考录取分数线数据获取方案</title>
+    
+<style>
+    body { 
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; 
+        max-width: 900px; 
+        margin: 40px auto; 
+        padding: 20px; 
+        line-height: 1.6;
+        color: #333;
+    }
+    h1, h2, h3 { color: #2c3e50; }
+    h1 { border-bottom: 2px solid #3498db; padding-bottom: 10px; }
+    code { background: #f4f4f4; padding: 2px 6px; border-radius: 3px; }
+    pre { background: #f4f4f4; padding: 15px; border-radius: 5px; overflow-x: auto; }
+    blockquote { border-left: 4px solid #3498db; margin: 0; padding-left: 20px; color: #666; }
+    table { border-collapse: collapse; width: 100%; margin: 20px 0; }
+    th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
+    th { background: #3498db; color: white; }
+    tr:nth-child(even) { background: #f9f9f9; }
+    a { color: #3498db; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .meta { color: #999; font-size: 0.9em; margin-bottom: 20px; }
+</style>
+
+</head>
+<body>
+    <div class="meta">生成时间：2026-03-05 14:49</div>
+    <h1 id="_1">高考录取分数线数据获取方案</h1>
+<h2 id="_2">一、数据源分析（优先级排序）</h2>
+<h3 id="_3">第一梯队：官方免费数据源</h3>
+<table>
+<thead>
+<tr>
+<th>数据源</th>
+<th>网址</th>
+<th>覆盖范围</th>
+<th>优点</th>
+<th>缺点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>阳光高考网</td>
+<td>https://gaokao.chsi.com.cn/</td>
+<td>全国</td>
+<td>教育部官方、权威</td>
+<td>数据分散、需逐校查询</td>
+</tr>
+<tr>
+<td>各省教育考试院</td>
+<td>各省官网</td>
+<td>本省</td>
+<td>最准确、最及时</td>
+<td>31 个省份、格式不一</td>
+</tr>
+<tr>
+<td>高校招生网</td>
+<td>各校官网</td>
+<td>本校</td>
+<td>官方数据、详细</td>
+<td>分散、需逐个访问</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_4">第二梯队：补充数据源</h3>
+<table>
+<thead>
+<tr>
+<th>数据源</th>
+<th>优点</th>
+<th>缺点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>中国教育在线</td>
+<td>数据较全</td>
+<td>部分需付费</td>
+</tr>
+<tr>
+<td>高考直通车</td>
+<td>整理较好</td>
+<td>非官方</td>
+</tr>
+<tr>
+<td>各高考志愿 APP</td>
+<td>数据全</td>
+<td>需注册/付费</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_5">二、数据表结构设计</h2>
+<h3 id="_6">主表：高校录取分数线大宽表</h3>
+<table>
+<thead>
+<tr>
+<th>字段名</th>
+<th>类型</th>
+<th>说明</th>
+<th>必填</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>school_code</td>
+<td>string</td>
+<td>学校代码</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>school_name</td>
+<td>string</td>
+<td>学校名称</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>province_code</td>
+<td>string</td>
+<td>省份代码</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>province_name</td>
+<td>string</td>
+<td>省份名称</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>year</td>
+<td>int</td>
+<td>年份 (2018-2025)</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>category</td>
+<td>string</td>
+<td>科类 (物理/历史/理科/文科)</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>batch</td>
+<td>string</td>
+<td>批次 (一本/二本/本科批)</td>
+<td></td>
+</tr>
+<tr>
+<td>min_score</td>
+<td>int</td>
+<td>最低录取分</td>
+<td></td>
+</tr>
+<tr>
+<td>min_rank</td>
+<td>int</td>
+<td>最低位次</td>
+<td></td>
+</tr>
+<tr>
+<td>avg_score</td>
+<td>int</td>
+<td>平均录取分</td>
+<td></td>
+</tr>
+<tr>
+<td>max_score</td>
+<td>int</td>
+<td>最高录取分</td>
+<td></td>
+</tr>
+<tr>
+<td>plan_count</td>
+<td>int</td>
+<td>计划招生数</td>
+<td></td>
+</tr>
+<tr>
+<td>admit_count</td>
+<td>int</td>
+<td>实际录取数</td>
+<td></td>
+</tr>
+<tr>
+<td>data_source</td>
+<td>string</td>
+<td>数据来源</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>update_time</td>
+<td>datetime</td>
+<td>更新时间</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>is_complete</td>
+<td>boolean</td>
+<td>数据是否完整</td>
+<td>✓</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_7">维度表</h3>
+<p><strong>1. 高校维度表 (school_dim)</strong>
+- school_code, school_name, province, type_985, type_211, type_double_first_class</p>
+<p><strong>2. 省份维度表 (province_dim)</strong>
+- province_code, province_name, region (华北/华东等)</p>
+<p><strong>3. 年份维度表 (year_dim)</strong>
+- year, gaokao_type (老高考/新高考)</p>
+<p><strong>4. 科类维度表 (category_dim)</strong>
+- category_code, category_name, applicable_provinces</p>
+<hr />
+<h2 id="_8">三、数据获取逻辑</h2>
+<h3 id="_9">核心流程</h3>
+<pre><code>开始
+  ↓
+遍历高校名单 (147 所)
+  ↓
+遍历年份 (2018-2025)
+  ↓
+遍历省份 (31 个)
+  ↓
+遍历科类 (物理/历史 或 理/文)
+  ↓
+查询录取分数线
+  ↓
+记录数据 (即使为空)
+  ↓
+完成
+</code></pre>
+<h3 id="_10">伪代码</h3>
+<pre><code class="language-python"># 完整的数据获取框架
+schools = load_school_list()  # 147 所高校
+provinces = load_province_list()  # 31 个省份
+years = range(2018, 2026)  # 2018-2025
+categories = ['物理类', '历史类']  # 或 ['理科', '文科']
+
+for school in schools:
+    for year in years:
+        for province in provinces:
+            for category in categories:
+                record = {
+                    'school_code': school.code,
+                    'school_name': school.name,
+                    'province_code': province.code,
+                    'province_name': province.name,
+                    'year': year,
+                    'category': category,
+                    'min_score': None,  # 即使为空也记录
+                    'min_rank': None,
+                    'data_source': '阳光高考网',
+                    'update_time': now(),
+                    'is_complete': False  # 标记为待补充
+                }
+
+                # 尝试获取数据
+                score_data = fetch_score(school, year, province, category)
+                if score_data:
+                    record.update(score_data)
+                    record['is_complete'] = True
+
+                # 保存记录
+                save_record(record)
+</code></pre>
+<hr />
+<h2 id="_11">四、缺失数据处理策略</h2>
+<h3 id="1">1. 结构性缺失（合理缺失）</h3>
+<table>
+<thead>
+<tr>
+<th>情况</th>
+<th>说明</th>
+<th>处理方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>新高考改革前</td>
+<td>2020 年前无物理/历史类</td>
+<td>记录为空，标记原因</td>
+</tr>
+<tr>
+<td>学校未在该省招生</td>
+<td>某些学校不在某些省份招生</td>
+<td>记录为空，标记"未招生"</td>
+</tr>
+<tr>
+<td>批次合并</td>
+<td>一二本合并为本科批</td>
+<td>记录 batch 为"本科批"</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2">2. 数据缺失（需补充）</h3>
+<table>
+<thead>
+<tr>
+<th>情况</th>
+<th>处理方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>官方未公布</td>
+<td>标记为"待补充"，后续找其他数据源</td>
+</tr>
+<tr>
+<td>数据不完整</td>
+<td>有多少记多少，缺失字段为空</td>
+</tr>
+<tr>
+<td>数据冲突</td>
+<td>以阳光高考网为准，其他为参考</td>
+</tr>
+</tbody>
+</table>
+<h3 id="3">3. 数据质量标记</h3>
+<pre><code class="language-python">quality_flags = {
+    'COMPLETE': '数据完整',
+    'PARTIAL': '部分字段缺失',
+    'MISSING': '数据完全缺失',
+    'ESTIMATED': '估算值',
+    'UNRELIABLE': '数据存疑'
+}
+</code></pre>
+<hr />
+<h2 id="_12">五、执行计划</h2>
+<h3 id="1-2">阶段一：框架搭建（1-2 天）</h3>
+<ol>
+<li>创建数据库表结构</li>
+<li>编写数据获取脚本框架</li>
+<li>测试单个学校的数据获取</li>
+</ol>
+<h3 id="3-5">阶段二：批量获取（3-5 天）</h3>
+<ol>
+<li>按学校逐个获取</li>
+<li>记录获取日志</li>
+<li>处理异常情况</li>
+</ol>
+<h3 id="2-3">阶段三：数据补充（2-3 天）</h3>
+<ol>
+<li>检查缺失数据</li>
+<li>用补充数据源填充</li>
+<li>标记数据质量</li>
+</ol>
+<h3 id="1-2_1">阶段四：数据验证（1-2 天）</h3>
+<ol>
+<li>数据完整性检查</li>
+<li>异常值检测</li>
+<li>交叉验证</li>
+</ol>
+<hr />
+<h2 id="_13">六、技术实现建议</h2>
+<h3 id="_14">推荐工具</h3>
+<table>
+<thead>
+<tr>
+<th>用途</th>
+<th>工具</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>数据存储</td>
+<td>SQLite/MySQL</td>
+<td>轻量级用 SQLite</td>
+</tr>
+<tr>
+<td>数据处理</td>
+<td>Python + Pandas</td>
+<td>数据清洗和分析</td>
+</tr>
+<tr>
+<td>网页爬虫</td>
+<td>requests + BeautifulSoup</td>
+<td>抓取官方数据</td>
+</tr>
+<tr>
+<td>任务调度</td>
+<td>cron/APScheduler</td>
+<td>定时更新</td>
+</tr>
+<tr>
+<td>数据导出</td>
+<td>CSV/Excel</td>
+<td>方便后续使用</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_15">反爬策略应对</h3>
+<ol>
+<li><strong>请求频率控制</strong>：每请求间隔 1-3 秒</li>
+<li><strong>User-Agent 轮换</strong>：模拟不同浏览器</li>
+<li><strong>IP 代理</strong>：必要时使用代理池</li>
+<li><strong>缓存机制</strong>：已获取数据本地缓存</li>
+</ol>
+<hr />
+<h2 id="_16">七、输出物</h2>
+<h3 id="1_1">1. 原始数据文件</h3>
+<pre><code>data/
+├── raw/
+│   ├── school_101_2025_all_provinces.csv
+│   ├── school_101_2024_all_provinces.csv
+│   └── ...
+├── processed/
+│   ├── all_schools_wide_table.csv  # 大宽表
+│   └── data_quality_report.xlsx    # 数据质量报告
+└── logs/
+    └── fetch_log_20250305.txt      # 获取日志
+</code></pre>
+<h3 id="2_1">2. 数据字典</h3>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>说明</th>
+<th>取值范围</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>year</td>
+<td>年份</td>
+<td>2018-2025</td>
+</tr>
+<tr>
+<td>province_code</td>
+<td>省份代码</td>
+<td>11-65 (国标)</td>
+</tr>
+<tr>
+<td>category</td>
+<td>科类</td>
+<td>物理类/历史类/理科/文科</td>
+</tr>
+<tr>
+<td>min_score</td>
+<td>最低分</td>
+<td>0-750</td>
+</tr>
+<tr>
+<td>is_complete</td>
+<td>完整性</td>
+<td>true/false</td>
+</tr>
+</tbody>
+</table>
+<h3 id="3_1">3. 质量报告</h3>
+<ul>
+<li>数据完整率统计</li>
+<li>缺失数据清单</li>
+<li>数据来源分布</li>
+</ul>
+<hr />
+<h2 id="_17">八、下一步行动</h2>
+<h3 id="_18">立即可做</h3>
+<ol>
+<li><strong>确认表结构</strong> - 是否需要调整字段</li>
+<li><strong>选择存储方式</strong> - CSV/Excel/数据库</li>
+<li><strong>确定优先级</strong> - 先获取哪些学校</li>
+</ol>
+<h3 id="_19">需要决策</h3>
+<ol>
+<li>是否自动爬虫抓取？还是手动收集？</li>
+<li>数据更新频率？（每年更新一次）</li>
+<li>是否需要可视化展示？</li>
+</ol>
+<hr />
+<h2 id="31">附录：31 个省份完整列表</h2>
+<table>
+<thead>
+<tr>
+<th>代码</th>
+<th>省份</th>
+<th>代码</th>
+<th>省份</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>11</td>
+<td>北京</td>
+<td>42</td>
+<td>湖北</td>
+</tr>
+<tr>
+<td>12</td>
+<td>天津</td>
+<td>43</td>
+<td>湖南</td>
+</tr>
+<tr>
+<td>13</td>
+<td>河北</td>
+<td>44</td>
+<td>广东</td>
+</tr>
+<tr>
+<td>14</td>
+<td>山西</td>
+<td>45</td>
+<td>广西</td>
+</tr>
+<tr>
+<td>15</td>
+<td>内蒙古</td>
+<td>46</td>
+<td>海南</td>
+</tr>
+<tr>
+<td>21</td>
+<td>辽宁</td>
+<td>50</td>
+<td>重庆</td>
+</tr>
+<tr>
+<td>22</td>
+<td>吉林</td>
+<td>51</td>
+<td>四川</td>
+</tr>
+<tr>
+<td>23</td>
+<td>黑龙江</td>
+<td>52</td>
+<td>贵州</td>
+</tr>
+<tr>
+<td>31</td>
+<td>上海</td>
+<td>53</td>
+<td>云南</td>
+</tr>
+<tr>
+<td>32</td>
+<td>江苏</td>
+<td>54</td>
+<td>西藏</td>
+</tr>
+<tr>
+<td>33</td>
+<td>浙江</td>
+<td>61</td>
+<td>陕西</td>
+</tr>
+<tr>
+<td>34</td>
+<td>安徽</td>
+<td>62</td>
+<td>甘肃</td>
+</tr>
+<tr>
+<td>35</td>
+<td>福建</td>
+<td>63</td>
+<td>青海</td>
+</tr>
+<tr>
+<td>36</td>
+<td>江西</td>
+<td>64</td>
+<td>宁夏</td>
+</tr>
+<tr>
+<td>37</td>
+<td>山东</td>
+<td>65</td>
+<td>新疆</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><strong>文档版本</strong>：v1.0<br />
+<strong>创建时间</strong>：2025-03-05<br />
+<strong>下一步</strong>：确认方案后开始实施</p>
+</body>
+</html>
