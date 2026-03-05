@@ -30,7 +30,7 @@
 
 </head>
 <body>
-    <div class="meta">生成时间：2026-03-05 10:20</div>
+    <div class="meta">生成时间：2026-03-05 14:41</div>
     <h1 id="long-term-memory">Long-Term Memory</h1>
 <h2 id="preferences">Preferences</h2>
 <h3 id="search">Search</h3>
@@ -43,6 +43,40 @@
 <ul>
 <li>Memory file created: 2026-02-28</li>
 <li>User prefers privacy-focused search tools</li>
+</ul>
+<h2 id="capabilities-">Capabilities - 文档转网页</h2>
+<p>当用户说"把文档材料做成网页"或类似需求时，自动执行以下流程：</p>
+<ol>
+<li><strong>准备 Markdown 文件</strong></li>
+<li>将报告/文档保存为 .md 格式</li>
+<li>
+<p>放在 /home/admin/.openclaw/workspace/ 目录</p>
+</li>
+<li>
+<p><strong>运行部署脚本</strong>
+   <code>bash
+   cd /home/admin/.openclaw/workspace
+   bash md2web.sh</code></p>
+</li>
+<li>
+<p><strong>返回公网链接</strong></p>
+</li>
+<li>部署成功后，链接格式：https://y880107.github.io/reports/</li>
+<li>
+<p>自动包含索引页和所有报告</p>
+</li>
+<li>
+<p><strong>配置信息</strong></p>
+</li>
+<li>GitHub 用户名：y880107</li>
+<li>Token 已配置在 deploy-config.sh</li>
+<li>仓库名：reports</li>
+</ol>
+<h2 id="_1">相关脚本</h2>
+<ul>
+<li>md2web.sh - Markdown 转 HTML 并部署到 GitHub Pages</li>
+<li>deploy-config.sh - 配置文件（含 Token 和用户名）</li>
+<li>使用指南.txt - 使用说明</li>
 </ul>
 </body>
 </html>
