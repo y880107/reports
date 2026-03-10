@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>高考录取数据获取方案调整</title>
+    
+<style>
+    body { 
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; 
+        max-width: 900px; 
+        margin: 40px auto; 
+        padding: 20px; 
+        line-height: 1.6;
+        color: #333;
+    }
+    h1, h2, h3 { color: #2c3e50; }
+    h1 { border-bottom: 2px solid #3498db; padding-bottom: 10px; }
+    code { background: #f4f4f4; padding: 2px 6px; border-radius: 3px; }
+    pre { background: #f4f4f4; padding: 15px; border-radius: 5px; overflow-x: auto; }
+    blockquote { border-left: 4px solid #3498db; margin: 0; padding-left: 20px; color: #666; }
+    table { border-collapse: collapse; width: 100%; margin: 20px 0; }
+    th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
+    th { background: #3498db; color: white; }
+    tr:nth-child(even) { background: #f9f9f9; }
+    a { color: #3498db; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .meta { color: #999; font-size: 0.9em; margin-bottom: 20px; }
+</style>
+
+</head>
+<body>
+    <div class="meta">生成时间：2026-03-10 10:40</div>
+    <h1 id="_1">高考录取数据获取方案调整</h1>
+<h2 id="_2">当前进展</h2>
+<p>✅ 已完成：
+- 数据模板框架：71,920 条记录
+- 145 所高校 × 8 年 × 31 省 × 2 科类
+- 文件位置：data/gaokao_scores_template.csv</p>
+<p>❌ 遇到问题：
+- 阳光高考网：412 反爬保护，API 不可用
+- 中国教育在线：API 接口 404
+- Selenium：ChromeDriver 版本不兼容</p>
+<h2 id="_3">推荐方案</h2>
+<h3 id="a">方案 A：手动收集 + 自动整理（推荐）</h3>
+<p><strong>步骤：</strong>
+1. 你从阳光高考网查询数据（手工）
+2. 截图或复制数据发给我
+3. 我帮你整理成 CSV 格式
+4. 填充到模板框架中</p>
+<p><strong>优点：</strong>
+- 数据准确可靠
+- 不需要技术配置
+- 适合重点学校优先收集</p>
+<p><strong>缺点：</strong>
+- 需要人工操作
+- 速度较慢</p>
+<p><strong>建议：</strong>
+先收集 10-20 所重点大学，验证数据质量</p>
+<hr />
+<h3 id="b">方案 B：购买现成数据集</h3>
+<p><strong>数据源：</strong>
+1. <strong>阿里云数据市场</strong>
+   - 搜索"高考录取分数"
+   - 价格：几百到几千元
+   - 数据较全，质量有保障</p>
+<ol>
+<li><strong>和鲸社区（Heywhale）</strong></li>
+<li>网址：https://www.heywhale.com/</li>
+<li>有免费和付费数据集</li>
+<li>
+<p>需要验证数据质量</p>
+</li>
+<li>
+<p><strong>Kaggle</strong></p>
+</li>
+<li>搜索"Chinese university admission"</li>
+<li>可能有相关数据集</li>
+<li>
+<p>免费但数据可能不完整</p>
+</li>
+<li>
+<p><strong>天池大赛</strong></p>
+</li>
+<li>网址：https://tianchi.aliyun.com/</li>
+<li>教育相关数据集</li>
+<li>需要注册账号</li>
+</ol>
+<p><strong>优点：</strong>
+- 数据完整
+- 节省时间
+- 格式规范</p>
+<p><strong>缺点：</strong>
+- 可能需要付费
+- 需要验证数据质量</p>
+<hr />
+<h3 id="c">方案 C：各省教育考试院官网</h3>
+<p><strong>部分省份提供查询接口：</strong></p>
+<table>
+<thead>
+<tr>
+<th>省份</th>
+<th>网址</th>
+<th>数据完整性</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>北京</td>
+<td>https://www.bjeea.cn/</td>
+<td>⭐⭐⭐⭐</td>
+</tr>
+<tr>
+<td>上海</td>
+<td>https://www.shmeea.edu.cn/</td>
+<td>⭐⭐⭐⭐</td>
+</tr>
+<tr>
+<td>江苏</td>
+<td>https://www.jseea.cn/</td>
+<td>⭐⭐⭐⭐</td>
+</tr>
+<tr>
+<td>浙江</td>
+<td>https://www.zjzs.net/</td>
+<td>⭐⭐⭐⭐</td>
+</tr>
+<tr>
+<td>广东</td>
+<td>https://eea.gd.gov.cn/</td>
+<td>⭐⭐⭐</td>
+</tr>
+</tbody>
+</table>
+<p><strong>优点：</strong>
+- 官方数据最准确
+- 免费</p>
+<p><strong>缺点：</strong>
+- 31 个省份需要逐个访问
+- 格式不统一
+- 部分省份需要验证码</p>
+<hr />
+<h3 id="d">方案 D：众包 + 志愿者</h3>
+<p><strong>思路：</strong>
+- 发动身边的人帮忙收集
+- 每人负责几所学校或几个省份
+- 统一格式汇总</p>
+<p><strong>优点：</strong>
+- 速度快
+- 免费</p>
+<p><strong>缺点：</strong>
+- 需要协调
+- 数据质量需要审核</p>
+<hr />
+<h2 id="_4">我的建议</h2>
+<p><strong>短期（1-2 周）：</strong>
+1. 先用方案 A，你手动收集 10-20 所重点大学
+2. 我帮你整理成 CSV，验证数据框架
+3. 同时搜索方案 B 的现成数据集</p>
+<p><strong>中期（1 个月）：</strong>
+- 如果找到可靠数据集，直接购买
+- 如果找不到，继续手动收集 + 发动志愿者</p>
+<p><strong>长期：</strong>
+- 建立持续更新机制
+- 每年高考后更新最新数据</p>
+<hr />
+<h2 id="_5">立即可做的事</h2>
+<ol>
+<li><strong>你从阳光高考网查几所学校试试</strong></li>
+<li>北京大学、清华大学、复旦大学等</li>
+<li>看看数据是否容易获取</li>
+<li>
+<p>截图发给我，我帮你整理</p>
+</li>
+<li>
+<p><strong>我帮你搜索数据集</strong></p>
+</li>
+<li>和鲸社区</li>
+<li>阿里云数据市场</li>
+<li>
+<p>Kaggle</p>
+</li>
+<li>
+<p><strong>确定优先级</strong></p>
+</li>
+<li>先收集 985 高校（39 所）</li>
+<li>再收集纯 211 高校（77 所）</li>
+<li>最后收集纯双一流（8 所）</li>
+</ol>
+<hr />
+<h2 id="_6">需要你的决策</h2>
+<ol>
+<li><strong>是否愿意手动收集部分数据？</strong></li>
+<li>是：先查 10 所学校试试</li>
+<li>
+<p>否：直接找数据集购买</p>
+</li>
+<li>
+<p><strong>预算范围？</strong></p>
+</li>
+<li>免费：只能手动收集或找免费数据集</li>
+<li>500 元以内：可以买小型数据集</li>
+<li>
+<p>不限：找最完整的数据集</p>
+</li>
+<li>
+<p><strong>时间要求？</strong></p>
+</li>
+<li>紧急：建议购买数据集</li>
+<li>不急：可以慢慢收集</li>
+</ol>
+<p>请告诉我你的想法，我们调整策略！</p>
+</body>
+</html>
