@@ -215,11 +215,12 @@
         
         <div class="footer">
             <p>⚠️ 本报告基于历史数据预测，仅供参考</p>
-            <p>生成时间：2026-03-18 08:21:51</p>
+            <p>生成时间：2026-03-19 16:09:15</p>
         </div>
     </div>
     
     <script>
+        document.addEventListener('DOMContentLoaded', function() {
         const ctx = document.getElementById('historyChart').getContext('2d');
         const chartData = {"labels": ["2021", "2022", "2023", "2024", "2025"], "scores": [638.0, 641.0, 644.0, 647.0, 650.0], "ranks": [3525, 5804, 2111, 2779, 5120]};
         
@@ -298,6 +299,7 @@
         } else {
             document.getElementById('historyChart').parentNode.innerHTML = '<p style="text-align:center;color:#999;padding:40px;">暂无历史数据可供展示</p>';
         }
+        });
     </script>
 </body>
 </html>
