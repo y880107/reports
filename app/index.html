@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>高考志愿咨询系统</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
+            line-height: 1.6; 
+            color: #333; 
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .app-container { 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            background: #fff; 
+            border-radius: 16px; 
+            box-shadow: 0 4px 24px rgba(0,0,0,0.2); 
+            overflow: hidden; 
+        }
+        .header { 
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
+            color: #fff; 
+            padding: 30px; 
+            text-align: center; 
+        }
+        .header h1 { font-size: 28px; margin-bottom: 10px; }
+        .header p { opacity: 0.9; font-size: 14px; }
+        
+        /* 场景选择 */
+        .scenario-tabs { 
+            display: flex; 
+            background: #f8f9fa; 
+            border-bottom: 2px solid #e9ecef; 
+        }
+        .scenario-tab {
+            flex: 1;
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: none;
+            background: transparent;
+            font-size: 16px;
+            font-weight: 600;
+            color: #666;
+        }
+        .scenario-tab:hover { background: #e9ecef; }
+        .scenario-tab.active { 
+            background: #fff; 
+            color: #667eea; 
+            border-bottom: 3px solid #667eea;
+            margin-bottom: -2px;
+        }
+        .scenario-tab .icon { font-size: 24px; display: block; margin-bottom: 8px; }
+        
+        /* 主内容区 */
+        .main-content { display: flex; min-height: 600px; }
+        
+        /* 左侧表单 */
+        .form-panel { 
+            flex: 1; 
+            padding: 30px; 
+            border-right: 1px solid #e9ecef; 
+            background: #fafafa;
+        }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { 
+            display: block; 
+            margin-bottom: 8px; 
+            font-weight: 600; 
+            color: #333; 
+        }
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            font-size: 15px;
+            transition: border-color 0.3s;
+        }
+        .form-group input:focus, .form-group select:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        .form-group small { color: #666; font-size: 12px; margin-top: 4px; display: block; }
+        
+        .btn-generate {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .btn-generate:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+        }
+        .btn-generate:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        /* 右侧报告 */
+        .report-panel { 
+            flex: 1.5; 
+            padding: 30px; 
+            overflow-y: auto; 
+            max-height: 800px;
+        }
+        .report-placeholder {
+            text-align: center;
+            padding: 60px 20px;
+            color: #999;
+        }
+        .report-placeholder .icon { font-size: 64px; margin-bottom: 20px; opacity: 0.5; }
+        
+        /* 报告样式 */
+        .report-container { display: none; }
+        .report-container.show { display: block; }
+        
+        .report-header { 
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
+            color: #fff; 
+            padding: 24px; 
+            border-radius: 12px; 
+            margin-bottom: 24px;
+            text-align: center;
+        }
+        .report-header h2 { font-size: 22px; margin-bottom: 8px; }
+        .report-header .meta { font-size: 13px; opacity: 0.9; }
+        
+        .report-section { 
+            background: #f8f9fa; 
+            border-radius: 12px; 
+            padding: 20px; 
+            margin-bottom: 20px; 
+        }
+        .report-section h3 { 
+            font-size: 16px; 
+            color: #333; 
+            margin-bottom: 16px; 
+            display: flex; 
+            align-items: center; 
+        }
+        .report-section h3::before { 
+            content: ''; 
+            width: 4px; 
+            height: 18px; 
+            background: #667eea; 
+            margin-right: 10px; 
+            border-radius: 2px; 
+        }
+        
+        .info-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+        .info-card { 
+            background: #fff; 
+            border-radius: 8px; 
+            padding: 16px; 
+            text-align: center; 
+        }
+        .info-card .label { font-size: 12px; color: #666; margin-bottom: 4px; }
+        .info-card .value { font-size: 18px; font-weight: 600; color: #333; }
+        
+        .match-badge { 
+            display: inline-block; 
+            padding: 6px 16px; 
+            border-radius: 20px; 
+            font-size: 13px; 
+            font-weight: 600; 
+        }
+        .match-high { background: #d4edda; color: #155724; }
+        .match-medium { background: #fff3cd; color: #856404; }
+        .match-low { background: #f8d7da; color: #721c24; }
+        
+        .school-table { width: 100%; border-collapse: collapse; margin-top: 12px; }
+        .school-table th, .school-table td { 
+            padding: 12px; 
+            text-align: left; 
+            border-bottom: 1px solid #e9ecef; 
+        }
+        .school-table th { background: #fff; font-weight: 600; color: #555; font-size: 13px; }
+        .school-table tr:hover { background: #fff; }
+        
+        .tag { 
+            display: inline-block; 
+            padding: 2px 8px; 
+            border-radius: 10px; 
+            font-size: 11px; 
+            margin-right: 4px; 
+        }
+        .tag-985 { background: #e3f2fd; color: #1976d2; }
+        .tag-211 { background: #fff3e0; color: #f57c00; }
+        
+        .chart-container { 
+            position: relative; 
+            height: 300px; 
+            background: #fff; 
+            border-radius: 8px; 
+            padding: 16px; 
+            margin-top: 12px;
+        }
+        
+        .btn-download {
+            display: inline-block;
+            padding: 12px 24px;
+            background: #28a745;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 16px;
+        }
+        .btn-download:hover { background: #218838; }
+        
+        .loading {
+            text-align: center;
+            padding: 40px;
+            display: none;
+        }
+        .loading.show { display: block; }
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid #e9ecef;
+            border-top-color: #667eea;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 16px;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        
+        /* 响应式 */
+        @media (max-width: 768px) {
+            .main-content { flex-direction: column; }
+            .form-panel { border-right: none; border-bottom: 1px solid #e9ecef; }
+            .scenario-tab { padding: 12px; font-size: 14px; }
+            .scenario-tab .icon { font-size: 18px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <div class="header">
+            <h1>🎓 高考志愿咨询系统</h1>
+            <p>基于历史数据的智能志愿填报助手</p>
+        </div>
+        
+        <!-- 场景选择 -->
+        <div class="scenario-tabs">
+            <button class="scenario-tab active" data-scenario="1">
+                <span class="icon">🎯</span>
+                目标学校咨询
+            </button>
+            <button class="scenario-tab" data-scenario="2">
+                <span class="icon">📚</span>
+                推荐学校列表
+            </button>
+            <button class="scenario-tab" data-scenario="3">
+                <span class="icon">💭</span>
+                高考回忆杀
+            </button>
+        </div>
+        
+        <div class="main-content">
+            <!-- 左侧表单 -->
+            <div class="form-panel">
+                <form id="reportForm">
+                    <!-- 公共字段 -->
+                    <div class="form-group">
+                        <label>考生省份 *</label>
+                        <select id="province" required>
+                            <option value="">请选择省份</option>
+                            <option value="江苏">江苏</option>
+                            <option value="浙江">浙江</option>
+                            <option value="广东">广东</option>
+                            <option value="四川">四川</option>
+                            <option value="云南">云南</option>
+                            <option value="北京">北京</option>
+                            <option value="上海">上海</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>科类 *</label>
+                        <select id="category" required>
+                            <option value="">请选择科类</option>
+                            <option value="物理类">物理类</option>
+                            <option value="历史类">历史类</option>
+                            <option value="理科">理科</option>
+                            <option value="文科">文科</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>高考分数 *</label>
+                        <input type="number" id="score" placeholder="例如：640" min="0" max="750" required>
+                        <small>请输入真实高考分数或模拟分数</small>
+                    </div>
+                    
+                    <!-- 场景 1 特有字段 -->
+                    <div class="form-group scenario-1-field">
+                        <label>目标学校名称 *</label>
+                        <input type="text" id="targetSchool" placeholder="例如：东南大学">
+                        <small>场景 1 专用：输入你想查询的学校</small>
+                    </div>
+                    
+                    <!-- 场景 3 特有字段 -->
+                    <div class="form-group scenario-3-field" style="display: none;">
+                        <label>毕业年份 *</label>
+                        <select id="gradYear">
+                            <option value="2025">2025 年</option>
+                            <option value="2024">2024 年</option>
+                            <option value="2023">2023 年</option>
+                            <option value="2022">2022 年</option>
+                            <option value="2021">2021 年</option>
+                            <option value="2020">2020 年</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group scenario-3-field" style="display: none;">
+                        <label>当年报考学校 *</label>
+                        <input type="text" id="pastSchool" placeholder="例如：电子科技大学">
+                        <small>场景 3 专用：你当年实际报考的学校</small>
+                    </div>
+                    
+                    <button type="submit" class="btn-generate" id="generateBtn">
+                        🚀 生成报告
+                    </button>
+                </form>
+            </div>
+            
+            <!-- 右侧报告 -->
+            <div class="report-panel">
+                <div class="report-placeholder" id="placeholder">
+                    <div class="icon">📝</div>
+                    <h3>等待生成报告</h3>
+                    <p>在左侧填写信息，点击"生成报告"按钮</p>
+                </div>
+                
+                <div class="loading" id="loading">
+                    <div class="spinner"></div>
+                    <p>正在分析数据，生成报告中...</p>
+                </div>
+                
+                <div class="report-container" id="reportContainer">
+                    <!-- 报告内容将动态生成 -->
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // 当前场景
+        let currentScenario = 1;
+        
+        // 场景切换
+        document.querySelectorAll('.scenario-tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                document.querySelectorAll('.scenario-tab').forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                currentScenario = parseInt(tab.dataset.scenario);
+                
+                // 显示/隐藏场景特有字段
+                document.querySelectorAll('.scenario-1-field').forEach(el => {
+                    el.style.display = currentScenario === 1 ? 'block' : 'none';
+                });
+                document.querySelectorAll('.scenario-3-field').forEach(el => {
+                    el.style.display = currentScenario === 3 ? 'block' : 'none';
+                });
+                
+                // 更新必填属性
+                document.getElementById('targetSchool').required = currentScenario === 1;
+                document.getElementById('gradYear').required = currentScenario === 3;
+                document.getElementById('pastSchool').required = currentScenario === 3;
+            });
+        });
+        
+        // 表单提交
+        document.getElementById('reportForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const formData = {
+                scenario: currentScenario,
+                province: document.getElementById('province').value,
+                category: document.getElementById('category').value,
+                score: parseInt(document.getElementById('score').value),
+                targetSchool: document.getElementById('targetSchool').value,
+                gradYear: document.getElementById('gradYear').value,
+                pastSchool: document.getElementById('pastSchool').value
+            };
+            
+            // 验证
+            if (!formData.province || !formData.category || !formData.score) {
+                alert('请填写必填字段');
+                return;
+            }
+            
+            // 显示加载状态
+            document.getElementById('placeholder').style.display = 'none';
+            document.getElementById('reportContainer').classList.remove('show');
+            document.getElementById('loading').classList.add('show');
+            document.getElementById('generateBtn').disabled = true;
+            
+            // 模拟 API 调用（实际应调用后端）
+            setTimeout(() => {
+                generateReport(formData);
+                document.getElementById('loading').classList.remove('show');
+                document.getElementById('reportContainer').classList.add('show');
+                document.getElementById('generateBtn').disabled = false;
+            }, 1500);
+        });
+        
+        // 生成报告
+        function generateReport(data) {
+            const container = document.getElementById('reportContainer');
+            let html = '';
+            
+            if (data.scenario === 1) {
+                html = generateScenario1(data);
+            } else if (data.scenario === 2) {
+                html = generateScenario2(data);
+            } else if (data.scenario === 3) {
+                html = generateScenario3(data);
+            }
+            
+            container.innerHTML = html;
+            
+            // 初始化图表
+            if (data.scenario === 1) {
+                initChart();
+            }
+        }
+        
+        // 场景 1: 目标学校咨询
+        function generateScenario1(data) {
+            const estimatedRank = Math.floor(Math.random() * 5000) + 500;
+            const predictedScore = (data.score - Math.random() * 20).toFixed(1);
+            const predictedRank = Math.floor(estimatedRank + Math.random() * 3000);
+            
+            return `
+                <div class="report-header">
+                    <h2>🎯 目标学校咨询报告</h2>
+                    <div class="meta">${data.year || 2026}年 | ${data.province} | ${data.category} | ${data.score}分</div>
+                </div>
+                
+                <div class="report-section">
+                    <h3>考生信息</h3>
+                    <div class="info-grid">
+                        <div class="info-card">
+                            <div class="label">考生省份</div>
+                            <div class="value">${data.province}</div>
+                        </div>
+                        <div class="info-card">
+                            <div class="label">科类</div>
+                            <div class="value">${data.category}</div>
+                        </div>
+                        <div class="info-card">
+                            <div class="label">高考分数</div>
+                            <div class="value">${data.score} 分</div>
+                        </div>
+                        <div class="info-card">
+                            <div class="label">估算位次</div>
+                            <div class="value">${estimatedRank.toLocaleString()} 名</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="report-section">
+                    <h3>目标学校</h3>
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+                        <span style="font-size: 22px; font-weight: 700;">${data.targetSchool}</span>
+                        <span class="match-badge match-high">轻松录取</span>
+                    </div>
+                    <div class="info-grid">
+                        <div class="info-card">
+                            <div class="label">学校所在地</div>
+                            <div class="value" style="font-size: 16px;">南京</div>
+                        </div>
+                        <div class="info-card">
+                            <div class="label">985/211</div>
+                            <div class="value" style="font-size: 16px;">✅ 985+211</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="report-section">
+                    <h3>2026 年录取预测</h3>
+                    <div style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: #fff; border-radius: 12px; padding: 20px; margin: 16px 0;">
+                        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; text-align: center;">
+                            <div>
+                                <div style="font-size: 12px; opacity: 0.9;">🚀 冲刺档</div>
+                                <div style="font-size: 18px; font-weight: 700;">&lt;3,003</div>
+                                <div style="font-size: 11px; opacity: 0.85; margin-top: 4px;">需冲刺</div>
+                            </div>
+                            <div>
+                                <div style="font-size: 12px; opacity: 0.9;">🎯 稳妥档</div>
+                                <div style="font-size: 18px; font-weight: 700;">3,169-3,503</div>
+                                <div style="font-size: 11px; opacity: 0.85; margin-top: 4px;">匹配度高</div>
+                            </div>
+                            <div>
+                                <div style="font-size: 12px; opacity: 0.9;">🛡️ 保底档</div>
+                                <div style="font-size: 18px; font-weight: 700;">&gt;4,003</div>
+                                <div style="font-size: 11px; opacity: 0.85; margin-top: 4px;">可保底</div>
+                            </div>
+                        </div>
+                        <div style="margin-top: 16px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.3); text-align: center;">
+                            <div style="font-size: 14px;">预测分数：<strong>${predictedScore}分</strong> | 预测位次：<strong>${predictedRank.toLocaleString()}名</strong></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="report-section">
+                    <h3>📈 历史录取趋势（近 5 年）</h3>
+                    <div class="chart-container">
+                        <canvas id="historyChart"></canvas>
+                    </div>
+                    <table class="school-table">
+                        <thead>
+                            <tr>
+                                <th>年份</th>
+                                <th>最低分</th>
+                                <th>最低位次</th>
+                                <th>位次变化</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><strong>2021</strong></td><td>638</td><td>3,525</td><td>-</td></tr>
+                            <tr><td><strong>2022</strong></td><td>641</td><td>5,804</td><td><span style="color: #28a745;">↓2,279</span></td></tr>
+                            <tr><td><strong>2023</strong></td><td>644</td><td>2,111</td><td><span style="color: #dc3545;">↑3,693</span></td></tr>
+                            <tr><td><strong>2024</strong></td><td>647</td><td>2,779</td><td><span style="color: #28a745;">↓668</span></td></tr>
+                            <tr><td><strong>2025</strong></td><td>650</td><td>5,120</td><td><span style="color: #28a745;">↓2,341</span></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="report-section">
+                    <h3>💡 填报建议</h3>
+                    <div style="background: #e7f3ff; border-left: 4px solid #2196F3; padding: 16px; border-radius: 0 8px 8px 0;">
+                        <p><strong>📍 志愿位置：</strong>建议放在志愿表后段（保底）</p>
+                        <p style="margin-top: 8px;"><strong>⚠️ 注意：</strong>你的位次明显优于该校预测，录取把握非常大！🎉</p>
+                    </div>
+                </div>
+                
+                <button class="btn-download" onclick="downloadReport()">📥 下载报告</button>
+            `;
+        }
+        
+        // 场景 2: 推荐学校列表
+        function generateScenario2(data) {
+            const chongSchools = [
+                { name: '北京理工大学', location: '北京', type: '理工', tags: ['985', '211'], rank: 3127 }
+            ];
+            const wenSchools = [
+                { name: '对外经济贸易大学', location: '北京', type: '财经', tags: ['985', '211'], rank: 5193 },
+                { name: '中央财经大学', location: '北京', type: '财经', tags: ['985', '211'], rank: 5440 },
+                { name: '北京交通大学', location: '北京', type: '理工', tags: ['211'], rank: 6379 }
+            ];
+            const baoSchools = [
+                { name: '中国政法大学', location: '北京', type: '其他', tags: ['211'], rank: 6785 },
+                { name: '北京科技大学', location: '北京', type: '理工', tags: ['211'], rank: 11822 },
+                { name: '中国传媒大学', location: '北京', type: '语言', tags: ['211'], rank: 12591 }
+            ];
+            
+            return `
+                <div class="report-header">
+                    <h2>🎓 推荐学校报告</h2>
+                    <div class="meta">${data.year || 2026}年 | ${data.province} | ${data.category} | ${data.score}分</div>
+                </div>
+                
+                <div class="report-section">
+                    <h3>📊 推荐概览</h3>
+                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 24px;">
+                        <div style="background: #fff; border-radius: 8px; padding: 16px; text-align: center;">
+                            <div style="font-size: 28px; font-weight: 700; color: #ffc107;">${chongSchools.length}</div>
+                            <div style="font-size: 13px; color: #666;">🚀 冲刺学校</div>
+                        </div>
+                        <div style="background: #fff; border-radius: 8px; padding: 16px; text-align: center;">
+                            <div style="font-size: 28px; font-weight: 700; color: #28a745;">${wenSchools.length}</div>
+                            <div style="font-size: 13px; color: #666;">🎯 稳妥学校</div>
+                        </div>
+                        <div style="background: #fff; border-radius: 8px; padding: 16px; text-align: center;">
+                            <div style="font-size: 28px; font-weight: 700; color: #17a2b8;">${baoSchools.length}</div>
+                            <div style="font-size: 13px; color: #666;">🛡️ 保底学校</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="report-section">
+                    <h3>🚀 冲刺档学校</h3>
+                    <table class="school-table">
+                        <thead>
+                            <tr>
+                                <th>学校名称</th>
+                                <th>所在地</th>
+                                <th>类型</th>
+                                <th>预测位次</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            ${chongSchools.map(s => `
+                                <tr>
+                                    <td><span style="font-weight: 600;">${s.name}</span> ${s.tags.map(t => `<span class="tag tag-${t}">${t}</span>`).join('')}</td>
+                                    <td>${s.location}</td>
+                                    <td>${s.type}</td>
+                                    <td><span style="display: inline-block; padding: 4px 12px; border-radius: 12px; font-size: 12px; font-weight: 600; background: #ffebee; color: #c62828;">${s.rank.toLocaleString()}</span></td>
+                                </tr>
+                            `).join('')}
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="report-section">
+                    <h3>🎯 稳妥档学校</h3>
+                    <table class="school-table">
+                        <thead>
+                            <tr>
+                                <th>学校名称</th>
+                                <th>所在地</th>
+                                <th>类型</th>
+                                <th>预测位次</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            ${wenSchools.map(s => `
+                                <tr>
+                                    <td><span style="font-weight: 600;">${s.name}</span> ${s.tags.map(t => `<span class="tag tag-${t}">${t}</span>`).join('')}</td>
+                                    <td>${s.location}</td>
+                                    <td>${s.type}</td>
+                                    <td><span style="display: inline-block; padding: 4px 12px; border-radius: 12px; font-size: 12px; font-weight: 600; background: #e8f5e9; color: #2e7d32;">${s.rank.toLocaleString()}</span></td>
+                                </tr>
+                            `).join('')}
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="report-section">
+                    <h3>🛡️ 保底档学校</h3>
+                    <table class="school-table">
+                        <thead>
+                            <tr>
+                                <th>学校名称</th>
+                                <th>所在地</th>
+                                <th>类型</th>
+                                <th>预测位次</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            ${baoSchools.map(s => `
+                                <tr>
+                                    <td><span style="font-weight: 600;">${s.name}</span> ${s.tags.map(t => `<span class="tag tag-${t}">${t}</span>`).join('')}</td>
+                                    <td>${s.location}</td>
+                                    <td>${s.type}</td>
+                                    <td><span style="display: inline-block; padding: 4px 12px; border-radius: 12px; font-size: 12px; font-weight: 600; background: #e3f2fd; color: #1565c0;">${s.rank.toLocaleString()}</span></td>
+                                </tr>
+                            `).join('')}
+                        </tbody>
+                    </table>
+                </div>
+                
+                <button class="btn-download" onclick="downloadReport()">📥 下载报告</button>
+            `;
+        }
+        
+        // 场景 3: 高考回忆杀
+        function generateScenario3(data) {
+            const estimatedRank = Math.floor(Math.random() * 5000) + 500;
+            
+            return `
+                <div class="report-header" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                    <h2>🎓 高考回忆杀</h2>
+                    <div style="font-size: 48px; font-weight: 700; opacity: 0.9; margin: 10px 0;">${data.gradYear}</div>
+                    <div class="meta">那年的夏天，那年的你</div>
+                </div>
+                
+                <div class="report-section">
+                    <h3>📝 那年的你</h3>
+                    <div class="info-grid">
+                        <div class="info-card" style="background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);">
+                            <div class="label">省份</div>
+                            <div class="value">${data.province}</div>
+                        </div>
+                        <div class="info-card" style="background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);">
+                            <div class="label">科类</div>
+                            <div class="value">${data.category}</div>
+                        </div>
+                        <div class="info-card" style="background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);">
+                            <div class="label">分数</div>
+                            <div class="value">${data.score} 分</div>
+                        </div>
+                        <div class="info-card" style="background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);">
+                            <div class="label">估算位次</div>
+                            <div class="value">${estimatedRank.toLocaleString()} 名</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="report-section">
+                    <h3>🎯 当年报考：${data.pastSchool}</h3>
+                    <div style="background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%); border-radius: 16px; padding: 30px; text-align: center; margin: 20px 0;">
+                        <div style="font-size: 64px; margin-bottom: 16px;">🔮</div>
+                        <div style="font-size: 24px; font-weight: 700; color: #333; margin-bottom: 12px;">🤔 让 AI 来帮你分析</div>
+                        <div style="color: #666; font-size: 16px;">看看如果重新填报，会有什么不同的选择~</div>
+                    </div>
+                    
+                    <div style="background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%); border-radius: 12px; padding: 20px; margin: 16px 0;">
+                        <h4 style="font-size: 16px; margin-bottom: 12px; color: #333;">🎁 AI 发现：当年你还可以"血赚"这所学校！</h4>
+                        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 12px;">
+                            <div>
+                                <div style="font-size: 12px; color: #666;">学校名称</div>
+                                <div style="font-size: 20px; font-weight: 700;">中央财经大学</div>
+                            </div>
+                            <div>
+                                <div style="font-size: 12px; color: #666;">所在地</div>
+                                <div style="font-size: 18px; font-weight: 600;">北京 (985)</div>
+                            </div>
+                            <div>
+                                <div style="font-size: 12px; color: #666;">${data.gradYear}年录取分</div>
+                                <div style="font-size: 18px; font-weight: 600;">633 分</div>
+                            </div>
+                            <div>
+                                <div style="font-size: 12px; color: #666;">你的分数优势</div>
+                                <div style="font-size: 18px; font-weight: 600; color: #28a745;">+5 分</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="report-section">
+                    <h3>💡 AI 碎碎念</h3>
+                    <div style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); border-radius: 12px; padding: 20px;">
+                        <h4 style="font-size: 16px; margin-bottom: 8px; color: #333;">🌈 青春回忆</h4>
+                        <p style="color: #555; font-size: 14px; line-height: 1.8;">
+                            说真的，${data.gradYear}年的你做出这个选择，肯定有自己的考量。
+                            无论"赚"还是"亏"，那都是青春里最珍贵的回忆。
+                            毕竟，<span style="color: #667eea; font-weight: 600;">重要的不是去了哪所学校，而是你在那里成为了什么样的人</span>。
+                            所以，放下数据，拥抱回忆吧！🌟
+                        </p>
+                    </div>
+                </div>
+                
+                <button class="btn-download" onclick="downloadReport()">📥 下载报告</button>
+            `;
+        }
+        
+        // 初始化图表
+        function initChart() {
+            const ctx = document.getElementById('historyChart');
+            if (!ctx) return;
+            
+            new Chart(ctx.getContext('2d'), {
+                type: 'line',
+                data: {
+                    labels: ['2021', '2022', '2023', '2024', '2025'],
+                    datasets: [
+                        {
+                            label: '录取分数',
+                            data: [638, 641, 644, 647, 650],
+                            borderColor: 'rgb(255, 99, 132)',
+                            backgroundColor: 'rgba(255, 99, 132, 0.1)',
+                            yAxisID: 'y',
+                            tension: 0.3,
+                            fill: true
+                        },
+                        {
+                            label: '录取位次',
+                            data: [3525, 5804, 2111, 2779, 5120],
+                            borderColor: 'rgb(54, 162, 235)',
+                            backgroundColor: 'rgba(54, 162, 235, 0.1)',
+                            yAxisID: 'y1',
+                            tension: 0.3,
+                            fill: true
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    interaction: {
+                        mode: 'index',
+                        intersect: false
+                    },
+                    scales: {
+                        y: {
+                            type: 'linear',
+                            display: true,
+                            position: 'left',
+                            title: { display: true, text: '分数' }
+                        },
+                        y1: {
+                            type: 'linear',
+                            display: true,
+                            position: 'right',
+                            reverse: true,
+                            title: { display: true, text: '位次' }
+                        }
+                    }
+                }
+            });
+        }
+        
+        // 下载报告
+        function downloadReport() {
+            const content = document.getElementById('reportContainer').innerHTML;
+            const printWindow = window.open('', '_blank');
+            printWindow.document.write(`
+                <!DOCTYPE html>
+                <html>
+                <head>
+                    <title>高考志愿报告</title>
+                    <style>
+                        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; padding: 40px; }
+                        .report-header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: #fff; padding: 24px; border-radius: 12px; margin-bottom: 24px; text-align: center; }
+                        .report-section { background: #f8f9fa; border-radius: 12px; padding: 20px; margin-bottom: 20px; }
+                        table { width: 100%; border-collapse: collapse; }
+                        th, td { padding: 12px; text-align: left; border-bottom: 1px solid #e9ecef; }
+                        th { background: #fff; font-weight: 600; }
+                    </style>
+                </head>
+                <body>${content}</body>
+                </html>
+            `);
+            printWindow.document.close();
+            printWindow.print();
+        }
+    </script>
+</body>
+</html>
