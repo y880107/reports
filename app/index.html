@@ -41,10 +41,19 @@
             align-items: center;
             justify-content: center;
             gap: 12px;
+            flex-wrap: wrap;
         }
         .data-notice .icon { font-size: 24px; }
         .data-notice .text { font-size: 14px; color: #856404; }
         .data-notice strong { color: #533f03; }
+        .data-badge {
+            background: rgba(255,255,255,0.5);
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            color: #856404;
+        }
         
         /* 场景选择 */
         .scenario-tabs { 
@@ -82,6 +91,8 @@
             padding: 30px; 
             border-right: 1px solid #e9ecef; 
             background: #fafafa;
+            max-height: 800px;
+            overflow-y: auto;
         }
         .form-group { margin-bottom: 20px; }
         .form-group label { 
@@ -103,6 +114,53 @@
             border-color: #667eea;
         }
         .form-group small { color: #666; font-size: 12px; margin-top: 4px; display: block; }
+        
+        /* 自动补全样式 */
+        .autocomplete-wrapper {
+            position: relative;
+        }
+        .autocomplete-list {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: #fff;
+            border: 2px solid #667eea;
+            border-radius: 8px;
+            max-height: 300px;
+            overflow-y: auto;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            display: none;
+        }
+        .autocomplete-list.show {
+            display: block;
+        }
+        .autocomplete-item {
+            padding: 12px 16px;
+            cursor: pointer;
+            border-bottom: 1px solid #f0f0f0;
+            transition: background 0.2s;
+        }
+        .autocomplete-item:hover {
+            background: #f0f4ff;
+        }
+        .autocomplete-item.active {
+            background: #667eea;
+            color: #fff;
+        }
+        .autocomplete-item .name {
+            font-weight: 600;
+            font-size: 15px;
+        }
+        .autocomplete-item .meta {
+            font-size: 12px;
+            color: #666;
+            margin-top: 4px;
+        }
+        .autocomplete-item.active .meta {
+            color: rgba(255,255,255,0.8);
+        }
         
         .btn-generate {
             width: 100%;
@@ -216,6 +274,7 @@
         }
         .tag-985 { background: #e3f2fd; color: #1976d2; }
         .tag-211 { background: #fff3e0; color: #f57c00; }
+        .tag-c9 { background: #f3e5f5; color: #7b1fa2; }
         
         .chart-container { 
             position: relative; 
@@ -278,7 +337,8 @@
         <div class="data-notice">
             <span class="icon">📊</span>
             <span class="text">
-                <strong>数据说明：</strong>本系统收录全国 <strong>116 所 211 高校</strong>（含 39 所 985）2020-2025 年录取数据，
+                <strong>数据说明：</strong>本系统收录全国 
+                <span class="data-badge" id="schoolCount">74</span> 所 985/211 高校 2020-2025 年录取数据，
                 基于真实历史数据进行 2026 年录取预测。
             </span>
         </div>
@@ -363,29 +423,10 @@
                     <!-- 场景 1 特有字段 -->
                     <div class="form-group scenario-1-field">
                         <label>目标学校名称 *</label>
-                        <input type="text" id="targetSchool" placeholder="例如：北京大学、清华大学" list="schoolList">
-                        <datalist id="schoolList">
-                            <option value="北京大学">
-                            <option value="清华大学">
-                            <option value="上海交通大学">
-                            <option value="复旦大学">
-                            <option value="浙江大学">
-                            <option value="南京大学">
-                            <option value="中国科学技术大学">
-                            <option value="哈尔滨工业大学">
-                            <option value="西安交通大学">
-                            <option value="同济大学">
-                            <option value="武汉大学">
-                            <option value="华中科技大学">
-                            <option value="南开大学">
-                            <option value="天津大学">
-                            <option value="中山大学">
-                            <option value="厦门大学">
-                            <option value="四川大学">
-                            <option value="山东大学">
-                            <option value="吉林大学">
-                            <option value="中南大学">
-                        </datalist>
+                        <div class="autocomplete-wrapper">
+                            <input type="text" id="targetSchool" placeholder="输入学校名称，如：北京大学" autocomplete="off">
+                            <div class="autocomplete-list" id="targetSchoolList"></div>
+                        </div>
                         <small>场景 1 专用：输入你想查询的 985/211 学校</small>
                     </div>
                     
@@ -404,7 +445,10 @@
                     
                     <div class="form-group scenario-3-field" style="display: none;">
                         <label>当年报考学校 *</label>
-                        <input type="text" id="pastSchool" placeholder="例如：电子科技大学" list="schoolList">
+                        <div class="autocomplete-wrapper">
+                            <input type="text" id="pastSchool" placeholder="输入学校名称" autocomplete="off">
+                            <div class="autocomplete-list" id="pastSchoolList"></div>
+                        </div>
                         <small>场景 3 专用：你当年实际报考的 985/211 学校</small>
                     </div>
                     
@@ -436,152 +480,118 @@
     </div>
     
     <script>
-        // 当前场景
+        // 全局变量
+        let universityDB = [];
         let currentScenario = 1;
         
-        // 模拟数据库（从 CSV 提取的 985/211 学校）
-        const universityDB = {
-            "北京大学": { type: "985+211", location: "北京", years: [
-                { year: 2021, score: 680, rank: 50 },
-                { year: 2022, score: 683, rank: 45 },
-                { year: 2023, score: 685, rank: 42 },
-                { year: 2024, score: 688, rank: 38 },
-                { year: 2025, score: 690, rank: 35 }
-            ]},
-            "清华大学": { type: "985+211", location: "北京", years: [
-                { year: 2021, score: 682, rank: 40 },
-                { year: 2022, score: 685, rank: 38 },
-                { year: 2023, score: 687, rank: 35 },
-                { year: 2024, score: 690, rank: 32 },
-                { year: 2025, score: 692, rank: 30 }
-            ]},
-            "上海交通大学": { type: "985+211", location: "上海", years: [
-                { year: 2021, score: 675, rank: 100 },
-                { year: 2022, score: 678, rank: 95 },
-                { year: 2023, score: 680, rank: 88 },
-                { year: 2024, score: 682, rank: 82 },
-                { year: 2025, score: 685, rank: 75 }
-            ]},
-            "复旦大学": { type: "985+211", location: "上海", years: [
-                { year: 2021, score: 672, rank: 150 },
-                { year: 2022, score: 675, rank: 140 },
-                { year: 2023, score: 677, rank: 130 },
-                { year: 2024, score: 680, rank: 120 },
-                { year: 2025, score: 682, rank: 110 }
-            ]},
-            "浙江大学": { type: "985+211", location: "浙江", years: [
-                { year: 2021, score: 670, rank: 200 },
-                { year: 2022, score: 673, rank: 190 },
-                { year: 2023, score: 675, rank: 180 },
-                { year: 2024, score: 678, rank: 170 },
-                { year: 2025, score: 680, rank: 160 }
-            ]},
-            "南京大学": { type: "985+211", location: "江苏", years: [
-                { year: 2021, score: 665, rank: 300 },
-                { year: 2022, score: 668, rank: 280 },
-                { year: 2023, score: 670, rank: 260 },
-                { year: 2024, score: 672, rank: 240 },
-                { year: 2025, score: 675, rank: 220 }
-            ]},
-            "中国科学技术大学": { type: "985+211", location: "安徽", years: [
-                { year: 2021, score: 668, rank: 250 },
-                { year: 2022, score: 670, rank: 240 },
-                { year: 2023, score: 673, rank: 220 },
-                { year: 2024, score: 675, rank: 200 },
-                { year: 2025, score: 678, rank: 180 }
-            ]},
-            "哈尔滨工业大学": { type: "985+211", location: "黑龙江", years: [
-                { year: 2021, score: 655, rank: 500 },
-                { year: 2022, score: 658, rank: 480 },
-                { year: 2023, score: 660, rank: 450 },
-                { year: 2024, score: 663, rank: 420 },
-                { year: 2025, score: 665, rank: 400 }
-            ]},
-            "西安交通大学": { type: "985+211", location: "陕西", years: [
-                { year: 2021, score: 650, rank: 700 },
-                { year: 2022, score: 653, rank: 680 },
-                { year: 2023, score: 655, rank: 650 },
-                { year: 2024, score: 658, rank: 620 },
-                { year: 2025, score: 660, rank: 600 }
-            ]},
-            "同济大学": { type: "985+211", location: "上海", years: [
-                { year: 2021, score: 660, rank: 400 },
-                { year: 2022, score: 663, rank: 380 },
-                { year: 2023, score: 665, rank: 360 },
-                { year: 2024, score: 668, rank: 340 },
-                { year: 2025, score: 670, rank: 320 }
-            ]},
-            "武汉大学": { type: "985+211", location: "湖北", years: [
-                { year: 2021, score: 645, rank: 900 },
-                { year: 2022, score: 648, rank: 850 },
-                { year: 2023, score: 650, rank: 800 },
-                { year: 2024, score: 653, rank: 750 },
-                { year: 2025, score: 655, rank: 700 }
-            ]},
-            "华中科技大学": { type: "985+211", location: "湖北", years: [
-                { year: 2021, score: 648, rank: 800 },
-                { year: 2022, score: 650, rank: 780 },
-                { year: 2023, score: 653, rank: 750 },
-                { year: 2024, score: 655, rank: 720 },
-                { year: 2025, score: 658, rank: 680 }
-            ]},
-            "南开大学": { type: "985+211", location: "天津", years: [
-                { year: 2021, score: 640, rank: 1100 },
-                { year: 2022, score: 643, rank: 1050 },
-                { year: 2023, score: 645, rank: 1000 },
-                { year: 2024, score: 648, rank: 950 },
-                { year: 2025, score: 650, rank: 900 }
-            ]},
-            "天津大学": { type: "985+211", location: "天津", years: [
-                { year: 2021, score: 638, rank: 1200 },
-                { year: 2022, score: 640, rank: 1150 },
-                { year: 2023, score: 643, rank: 1100 },
-                { year: 2024, score: 645, rank: 1050 },
-                { year: 2025, score: 648, rank: 1000 }
-            ]},
-            "中山大学": { type: "985+211", location: "广东", years: [
-                { year: 2021, score: 642, rank: 1000 },
-                { year: 2022, score: 645, rank: 950 },
-                { year: 2023, score: 647, rank: 900 },
-                { year: 2024, score: 650, rank: 850 },
-                { year: 2025, score: 652, rank: 800 }
-            ]},
-            "厦门大学": { type: "985+211", location: "福建", years: [
-                { year: 2021, score: 635, rank: 1400 },
-                { year: 2022, score: 638, rank: 1350 },
-                { year: 2023, score: 640, rank: 1300 },
-                { year: 2024, score: 643, rank: 1250 },
-                { year: 2025, score: 645, rank: 1200 }
-            ]},
-            "四川大学": { type: "985+211", location: "四川", years: [
-                { year: 2021, score: 632, rank: 1600 },
-                { year: 2022, score: 635, rank: 1550 },
-                { year: 2023, score: 637, rank: 1500 },
-                { year: 2024, score: 640, rank: 1450 },
-                { year: 2025, score: 642, rank: 1400 }
-            ]},
-            "山东大学": { type: "985+211", location: "山东", years: [
-                { year: 2021, score: 630, rank: 1800 },
-                { year: 2022, score: 633, rank: 1750 },
-                { year: 2023, score: 635, rank: 1700 },
-                { year: 2024, score: 638, rank: 1650 },
-                { year: 2025, score: 640, rank: 1600 }
-            ]},
-            "吉林大学": { type: "985+211", location: "吉林", years: [
-                { year: 2021, score: 625, rank: 2200 },
-                { year: 2022, score: 628, rank: 2150 },
-                { year: 2023, score: 630, rank: 2100 },
-                { year: 2024, score: 633, rank: 2050 },
-                { year: 2025, score: 635, rank: 2000 }
-            ]},
-            "中南大学": { type: "985+211", location: "湖南", years: [
-                { year: 2021, score: 628, rank: 2000 },
-                { year: 2022, score: 630, rank: 1950 },
-                { year: 2023, score: 633, rank: 1900 },
-                { year: 2024, score: 635, rank: 1850 },
-                { year: 2025, score: 638, rank: 1800 }
-            ]}
-        };
+        // 加载数据库
+        async function loadDatabase() {
+            try {
+                const response = await fetch('universities_db.json');
+                universityDB = await response.json();
+                document.getElementById('schoolCount').textContent = universityDB.length;
+                console.log(`✅ 加载 ${universityDB.length} 所高校数据`);
+            } catch (error) {
+                console.error('❌ 加载数据库失败:', error);
+                alert('加载学校数据失败，请刷新页面重试');
+            }
+        }
+        
+        // 自动补全功能
+        function setupAutocomplete(inputId, listId, onSelect) {
+            const input = document.getElementById(inputId);
+            const list = document.getElementById(listId);
+            let activeIndex = -1;
+            
+            if (!input || !list) return;
+            
+            input.addEventListener('input', () => {
+                const value = input.value.trim();
+                if (value.length < 1) {
+                    list.classList.remove('show');
+                    return;
+                }
+                
+                // 搜索匹配的学校
+                const matches = universityDB.filter(school => 
+                    school.name.includes(value)
+                ).slice(0, 10);
+                
+                if (matches.length === 0) {
+                    list.classList.remove('show');
+                    return;
+                }
+                
+                // 渲染列表
+                list.innerHTML = matches.map((school, index) => `
+                    <div class="autocomplete-item" data-index="${index}">
+                        <div class="name">${highlightMatch(school.name, value)}</div>
+                        <div class="meta">${school.province} · ${formatTags(school.tags)}</div>
+                    </div>
+                `).join('');
+                
+                list.classList.add('show');
+                activeIndex = -1;
+            });
+            
+            // 键盘导航
+            input.addEventListener('keydown', (e) => {
+                const items = list.querySelectorAll('.autocomplete-item');
+                
+                if (e.key === 'ArrowDown') {
+                    e.preventDefault();
+                    activeIndex = Math.min(activeIndex + 1, items.length - 1);
+                    updateActiveItem(items, activeIndex);
+                } else if (e.key === 'ArrowUp') {
+                    e.preventDefault();
+                    activeIndex = Math.max(activeIndex - 1, -1);
+                    updateActiveItem(items, activeIndex);
+                } else if (e.key === 'Enter' && activeIndex >= 0) {
+                    e.preventDefault();
+                    items[activeIndex].click();
+                } else if (e.key === 'Escape') {
+                    list.classList.remove('show');
+                }
+            });
+            
+            // 点击选择
+            list.addEventListener('click', (e) => {
+                const item = e.target.closest('.autocomplete-item');
+                if (!item) return;
+                
+                const index = parseInt(item.dataset.index);
+                const school = universityDB.find(s => s.name.includes(input.value.trim()));
+                const matchedSchool = universityDB.filter(s => s.name.includes(input.value.trim()))[index];
+                
+                if (matchedSchool) {
+                    input.value = matchedSchool.name;
+                    onSelect(matchedSchool);
+                    list.classList.remove('show');
+                }
+            });
+            
+            // 点击外部关闭
+            document.addEventListener('click', (e) => {
+                if (!input.contains(e.target) && !list.contains(e.target)) {
+                    list.classList.remove('show');
+                }
+            });
+        }
+        
+        function updateActiveItem(items, index) {
+            items.forEach((item, i) => {
+                item.classList.toggle('active', i === index);
+            });
+        }
+        
+        function highlightMatch(text, query) {
+            const regex = new RegExp(`(${query})`, 'gi');
+            return text.replace(regex, '<mark style="background: #fff3cd; padding: 0 2px;">$1</mark>');
+        }
+        
+        function formatTags(tags) {
+            return tags.filter(t => t).join(' + ');
+        }
         
         // 场景切换
         document.querySelectorAll('.scenario-tab').forEach(tab => {
@@ -702,7 +712,7 @@
         // 计算匹配度
         function calculateMatch(studentScore, studentRank, predictedScore, predictedRank) {
             const scoreDiff = studentScore - parseFloat(predictedScore);
-            const rankDiff = predictedRank - studentRank; // 位次越小越优秀
+            const rankDiff = predictedRank - studentRank;
             
             if (scoreDiff >= 5 && rankDiff >= 500) return { level: 'high', text: '轻松录取', class: 'match-high' };
             if (scoreDiff >= 2 && rankDiff >= 200) return { level: 'medium', text: '稳妥', class: 'match-medium' };
@@ -712,23 +722,18 @@
         
         // 场景 1: 目标学校咨询
         function generateScenario1(data) {
-            const school = universityDB[data.targetSchool];
+            const school = universityDB.find(s => s.name === data.targetSchool);
             
             if (!school) {
                 return `<div style="padding: 40px; text-align: center; color: #dc3545;">
                     <h3>❌ 未找到学校数据</h3>
                     <p>"${data.targetSchool}"不在 985/211 数据库中</p>
-                    <p style="margin-top: 12px; font-size: 13px;">请检查学校名称或选择其他 985/211 高校</p>
+                    <p style="margin-top: 12px; font-size: 13px;">请检查学校名称或从下拉列表选择</p>
                 </div>`;
             }
             
-            // 估算位次（简化）
             const estimatedRank = Math.floor((750 - data.score) * 100 + Math.random() * 1000);
-            
-            // 预测 2026 年数据
             const prediction = predict2026(school.years);
-            
-            // 计算匹配度
             const match = calculateMatch(data.score, estimatedRank, prediction.score, prediction.rank);
             
             return `
@@ -763,15 +768,15 @@
                     <h3>目标学校</h3>
                     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
                         <div>
-                            <span style="font-size: 22px; font-weight: 700;">${data.targetSchool}</span>
-                            <span class="tag tag-985">985</span><span class="tag tag-211">211</span>
+                            <span style="font-size: 22px; font-weight: 700;">${school.name}</span>
+                            ${school.tags.map(t => `<span class="tag tag-${t.toLowerCase()}">${t}</span>`).join('')}
                         </div>
                         <span class="match-badge ${match.class}">${match.text}</span>
                     </div>
                     <div class="info-grid">
                         <div class="info-card">
                             <div class="label">学校所在地</div>
-                            <div class="value" style="font-size: 16px;">${school.location}</div>
+                            <div class="value" style="font-size: 16px;">${school.province}</div>
                         </div>
                         <div class="info-card">
                             <div class="label">学校类型</div>
@@ -851,7 +856,7 @@
                     <div style="background: #e7f3ff; border-left: 4px solid #2196F3; padding: 16px; border-radius: 0 8px 8px 0;">
                         <p><strong>📊 分数对比：</strong>你的分数 ${data.score}分 vs 预测线 ${prediction.score}分 = <span style="color: ${data.score >= prediction.score ? '#28a745' : '#dc3545'}; font-weight: 600;">${(data.score - prediction.score).toFixed(1)}分${data.score >= prediction.score ? '优势' : '劣势'}</span></p>
                         <p style="margin-top: 8px;"><strong>📍 志愿位置：</strong>${match.level === 'high' ? '建议放在志愿表后段（保底）' : match.level === 'medium' ? '建议放在志愿表中段（稳妥）' : '建议放在志愿表前段（冲刺）'}</p>
-                        <p style="margin-top: 8px;"><strong>⚠️ 数据来源：</strong>基于${data.targetSchool}2020-2025 年历史录取数据，使用线性回归算法预测 2026 年趋势</p>
+                        <p style="margin-top: 8px;"><strong>⚠️ 数据来源：</strong>基于${school.name}${school.years[0]?.year}-${school.years[school.years.length-1]?.year}年历史录取数据，使用线性回归算法预测 2026 年趋势</p>
                     </div>
                 </div>
                 
@@ -863,21 +868,20 @@
         function generateScenario2(data) {
             const estimatedRank = Math.floor((750 - data.score) * 100 + Math.random() * 1000);
             
-            // 根据分数推荐学校
             const chongSchools = [];
             const wenSchools = [];
             const baoSchools = [];
             
-            Object.entries(universityDB).forEach(([name, school]) => {
+            universityDB.forEach(school => {
                 const prediction = predict2026(school.years);
                 const scoreDiff = data.score - parseFloat(prediction.score);
                 
                 if (scoreDiff >= -3 && scoreDiff < 3) {
-                    chongSchools.push({ name, ...school, prediction });
+                    chongSchools.push({ ...school, prediction });
                 } else if (scoreDiff >= 3 && scoreDiff < 8) {
-                    wenSchools.push({ name, ...school, prediction });
+                    wenSchools.push({ ...school, prediction });
                 } else if (scoreDiff >= 8) {
-                    baoSchools.push({ name, ...school, prediction });
+                    baoSchools.push({ ...school, prediction });
                 }
             });
             
@@ -918,10 +922,10 @@
                             </tr>
                         </thead>
                         <tbody>
-                            ${chongSchools.slice(0, 5).map(s => `
+                            ${chongSchools.slice(0, 10).map(s => `
                                 <tr>
-                                    <td><span style="font-weight: 600;">${s.name}</span> <span class="tag tag-985">985</span><span class="tag tag-211">211</span></td>
-                                    <td>${s.location}</td>
+                                    <td><span style="font-weight: 600;">${s.name}</span> ${s.tags.map(t => `<span class="tag tag-${t.toLowerCase()}">${t}</span>`).join('')}</td>
+                                    <td>${s.province}</td>
                                     <td>${s.type}</td>
                                     <td><span style="display: inline-block; padding: 4px 12px; border-radius: 12px; font-size: 12px; font-weight: 600; background: #ffebee; color: #c62828;">${s.prediction.score}分</span></td>
                                 </tr>
@@ -944,10 +948,10 @@
                             </tr>
                         </thead>
                         <tbody>
-                            ${wenSchools.slice(0, 5).map(s => `
+                            ${wenSchools.slice(0, 10).map(s => `
                                 <tr>
-                                    <td><span style="font-weight: 600;">${s.name}</span> <span class="tag tag-985">985</span><span class="tag tag-211">211</span></td>
-                                    <td>${s.location}</td>
+                                    <td><span style="font-weight: 600;">${s.name}</span> ${s.tags.map(t => `<span class="tag tag-${t.toLowerCase()}">${t}</span>`).join('')}</td>
+                                    <td>${s.province}</td>
                                     <td>${s.type}</td>
                                     <td><span style="display: inline-block; padding: 4px 12px; border-radius: 12px; font-size: 12px; font-weight: 600; background: #e8f5e9; color: #2e7d32;">${s.prediction.score}分</span></td>
                                 </tr>
@@ -970,10 +974,10 @@
                             </tr>
                         </thead>
                         <tbody>
-                            ${baoSchools.slice(0, 5).map(s => `
+                            ${baoSchools.slice(0, 10).map(s => `
                                 <tr>
-                                    <td><span style="font-weight: 600;">${s.name}</span> <span class="tag tag-985">985</span><span class="tag tag-211">211</span></td>
-                                    <td>${s.location}</td>
+                                    <td><span style="font-weight: 600;">${s.name}</span> ${s.tags.map(t => `<span class="tag tag-${t.toLowerCase()}">${t}</span>`).join('')}</td>
+                                    <td>${s.province}</td>
                                     <td>${s.type}</td>
                                     <td><span style="display: inline-block; padding: 4px 12px; border-radius: 12px; font-size: 12px; font-weight: 600; background: #e3f2fd; color: #1565c0;">${s.prediction.score}分</span></td>
                                 </tr>
@@ -986,7 +990,7 @@
                 <div class="report-section">
                     <h3>⚠️ 说明</h3>
                     <div style="background: #fff3cd; border-left: 4px solid #ffc107; padding: 16px; border-radius: 0 8px 8px 0;">
-                        <p><strong>📊 数据来源：</strong>基于全国 116 所 211 高校（含 39 所 985）2020-2025 年历史录取数据</p>
+                        <p><strong>📊 数据来源：</strong>基于全国 ${universityDB.length} 所 985/211 高校 2020-2025 年历史录取数据</p>
                         <p style="margin-top: 8px;"><strong>🔮 预测算法：</strong>使用线性回归分析历年分数和位次趋势，预测 2026 年录取线</p>
                         <p style="margin-top: 8px;"><strong>⚠️ 仅供参考：</strong>实际录取受招生计划、报考人数、政策变化等因素影响</p>
                     </div>
@@ -999,7 +1003,7 @@
         // 场景 3: 高考回忆杀
         function generateScenario3(data) {
             const estimatedRank = Math.floor((750 - data.score) * 100 + Math.random() * 1000);
-            const school = universityDB[data.pastSchool];
+            const school = universityDB.find(s => s.name === data.pastSchool);
             
             if (!school) {
                 return `<div style="padding: 40px; text-align: center; color: #dc3545;">
@@ -1038,7 +1042,7 @@
                 </div>
                 
                 <div class="report-section">
-                    <h3>🎯 当年报考：${data.pastSchool}</h3>
+                    <h3>🎯 当年报考：${school.name}</h3>
                     <div style="background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%); border-radius: 16px; padding: 30px; text-align: center; margin: 20px 0;">
                         <div style="font-size: 64px; margin-bottom: 16px;">🔮</div>
                         <div style="font-size: 24px; font-weight: 700; color: #333; margin-bottom: 12px;">🤔 让 AI 来帮你分析</div>
@@ -1090,12 +1094,13 @@
             const ctx = document.getElementById('historyChart');
             if (!ctx) return;
             
-            const school = universityDB[schoolName];
+            const school = universityDB.find(s => s.name === schoolName);
             if (!school) return;
             
             const labels = school.years.map(y => y.year.toString());
             const scores = school.years.map(y => y.score);
             const ranks = school.years.map(y => y.rank);
+            const prediction = predict2026(school.years);
             
             new Chart(ctx.getContext('2d'), {
                 type: 'line',
@@ -1104,7 +1109,7 @@
                     datasets: [
                         {
                             label: '录取分数',
-                            data: [...scores, parseFloat(predict2026(school.years).score)],
+                            data: [...scores, parseFloat(prediction.score)],
                             borderColor: 'rgb(255, 99, 132)',
                             backgroundColor: 'rgba(255, 99, 132, 0.1)',
                             yAxisID: 'y',
@@ -1113,7 +1118,7 @@
                         },
                         {
                             label: '录取位次',
-                            data: [...ranks, predict2026(school.years).rank],
+                            data: [...ranks, prediction.rank],
                             borderColor: 'rgb(54, 162, 235)',
                             backgroundColor: 'rgba(54, 162, 235, 0.1)',
                             yAxisID: 'y1',
@@ -1172,6 +1177,20 @@
             printWindow.document.close();
             printWindow.print();
         }
+        
+        // 页面加载时初始化
+        window.addEventListener('DOMContentLoaded', () => {
+            loadDatabase();
+            
+            // 设置自动补全
+            setupAutocomplete('targetSchool', 'targetSchoolList', (school) => {
+                console.log('选择学校:', school.name);
+            });
+            
+            setupAutocomplete('pastSchool', 'pastSchoolList', (school) => {
+                console.log('选择学校:', school.name);
+            });
+        });
     </script>
 </body>
 </html>

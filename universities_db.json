@@ -1,0 +1,4146 @@
+[
+  {
+    "code": "",
+    "name": "上海交通大学",
+    "province": "上海",
+    "type": "C9 联盟",
+    "tags": [
+      "C9"
+    ],
+    "years": [
+      {
+        "year": 2021,
+        "province": "北京",
+        "category": "综合",
+        "score": 658.0,
+        "rank": 289,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2022,
+        "province": "北京",
+        "category": "综合",
+        "score": 663.0,
+        "rank": 53,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2023,
+        "province": "北京",
+        "category": "综合",
+        "score": 668.0,
+        "rank": 78,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2024,
+        "province": "上海",
+        "category": "综合",
+        "score": 580.0,
+        "rank": 226,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2025,
+        "province": "上海",
+        "category": "综合",
+        "score": 580.0,
+        "rank": 215,
+        "plan_count": 0,
+        "admit_count": 0
+      }
+    ]
+  },
+  {
+    "code": "",
+    "name": "上海外国语大学",
+    "province": "上海",
+    "type": "211 高校",
+    "tags": [
+      "211"
+    ],
+    "years": [
+      {
+        "year": 2021,
+        "province": "北京",
+        "category": "物理类",
+        "score": 613.0,
+        "rank": 1389,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2022,
+        "province": "北京",
+        "category": "物理类",
+        "score": 616.0,
+        "rank": 4963,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2023,
+        "province": "北京",
+        "category": "物理类",
+        "score": 619.0,
+        "rank": 1460,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2024,
+        "province": "北京",
+        "category": "物理类",
+        "score": 622.0,
+        "rank": 3714,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2025,
+        "province": "北京",
+        "category": "物理类",
+        "score": 625.0,
+        "rank": 2288,
+        "plan_count": 0,
+        "admit_count": 0
+      }
+    ]
+  },
+  {
+    "code": "",
+    "name": "上海财经大学",
+    "province": "上海",
+    "type": "211 高校",
+    "tags": [
+      "211"
+    ],
+    "years": [
+      {
+        "year": 2021,
+        "province": "北京",
+        "category": "物理类",
+        "score": 638.0,
+        "rank": 2039,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2022,
+        "province": "北京",
+        "category": "物理类",
+        "score": 641.0,
+        "rank": 1011,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2023,
+        "province": "北京",
+        "category": "物理类",
+        "score": 644.0,
+        "rank": 1723,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2024,
+        "province": "北京",
+        "category": "物理类",
+        "score": 647.0,
+        "rank": 897,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2025,
+        "province": "北京",
+        "category": "物理类",
+        "score": 650.0,
+        "rank": 431,
+        "plan_count": 0,
+        "admit_count": 0
+      }
+    ]
+  },
+  {
+    "code": "",
+    "name": "东北农业大学",
+    "province": "黑龙江",
+    "type": "211 高校",
+    "tags": [
+      "211"
+    ],
+    "years": [
+      {
+        "year": 2021,
+        "province": "黑龙江",
+        "category": "物理类",
+        "score": 553.0,
+        "rank": 29983,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2022,
+        "province": "黑龙江",
+        "category": "物理类",
+        "score": 556.0,
+        "rank": 8260,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2023,
+        "province": "黑龙江",
+        "category": "物理类",
+        "score": 559.0,
+        "rank": 6074,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2024,
+        "province": "黑龙江",
+        "category": "物理类",
+        "score": 562.0,
+        "rank": 26969,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2025,
+        "province": "黑龙江",
+        "category": "物理类",
+        "score": 565.0,
+        "rank": 8589,
+        "plan_count": 0,
+        "admit_count": 0
+      }
+    ]
+  },
+  {
+    "code": "",
+    "name": "东北大学",
+    "province": "辽宁",
+    "type": "211 高校",
+    "tags": [
+      "211"
+    ],
+    "years": [
+      {
+        "year": 2021,
+        "province": "北京",
+        "category": "物理类",
+        "score": 598.0,
+        "rank": 1425,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2022,
+        "province": "北京",
+        "category": "物理类",
+        "score": 601.0,
+        "rank": 5828,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2023,
+        "province": "北京",
+        "category": "物理类",
+        "score": 604.0,
+        "rank": 1790,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2024,
+        "province": "北京",
+        "category": "物理类",
+        "score": 607.0,
+        "rank": 5446,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2025,
+        "province": "北京",
+        "category": "物理类",
+        "score": 610.0,
+        "rank": 1147,
+        "plan_count": 0,
+        "admit_count": 0
+      }
+    ]
+  },
+  {
+    "code": "",
+    "name": "东北师范大学",
+    "province": "吉林",
+    "type": "211 高校",
+    "tags": [
+      "211"
+    ],
+    "years": [
+      {
+        "year": 2021,
+        "province": "吉林",
+        "category": "物理类",
+        "score": 583.0,
+        "rank": 4802,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2022,
+        "province": "吉林",
+        "category": "物理类",
+        "score": 586.0,
+        "rank": 6708,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2023,
+        "province": "吉林",
+        "category": "物理类",
+        "score": 589.0,
+        "rank": 12275,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2024,
+        "province": "吉林",
+        "category": "物理类",
+        "score": 592.0,
+        "rank": 10242,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2025,
+        "province": "吉林",
+        "category": "物理类",
+        "score": 595.0,
+        "rank": 8186,
+        "plan_count": 0,
+        "admit_count": 0
+      }
+    ]
+  },
+  {
+    "code": "",
+    "name": "东北林业大学",
+    "province": "黑龙江",
+    "type": "211 高校",
+    "tags": [
+      "211"
+    ],
+    "years": [
+      {
+        "year": 2021,
+        "province": "黑龙江",
+        "category": "物理类",
+        "score": 563.0,
+        "rank": 28652,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2022,
+        "province": "黑龙江",
+        "category": "物理类",
+        "score": 566.0,
+        "rank": 28349,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2023,
+        "province": "黑龙江",
+        "category": "物理类",
+        "score": 569.0,
+        "rank": 20797,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2024,
+        "province": "黑龙江",
+        "category": "物理类",
+        "score": 572.0,
+        "rank": 16038,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2025,
+        "province": "黑龙江",
+        "category": "物理类",
+        "score": 575.0,
+        "rank": 11781,
+        "plan_count": 0,
+        "admit_count": 0
+      }
+    ]
+  },
+  {
+    "code": "",
+    "name": "东南大学",
+    "province": "江苏",
+    "type": "211 高校",
+    "tags": [
+      "211"
+    ],
+    "years": [
+      {
+        "year": 2021,
+        "province": "北京",
+        "category": "物理类",
+        "score": 633.0,
+        "rank": 1466,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2022,
+        "province": "北京",
+        "category": "物理类",
+        "score": 636.0,
+        "rank": 540,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2023,
+        "province": "北京",
+        "category": "物理类",
+        "score": 639.0,
+        "rank": 1309,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2024,
+        "province": "北京",
+        "category": "物理类",
+        "score": 642.0,
+        "rank": 510,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2025,
+        "province": "北京",
+        "category": "物理类",
+        "score": 645.0,
+        "rank": 1621,
+        "plan_count": 0,
+        "admit_count": 0
+      }
+    ]
+  },
+  {
+    "code": "",
+    "name": "中南大学",
+    "province": "湖南",
+    "type": "211 高校",
+    "tags": [
+      "211"
+    ],
+    "years": [
+      {
+        "year": 2021,
+        "province": "北京",
+        "category": "物理类",
+        "score": 608.0,
+        "rank": 5782,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2022,
+        "province": "北京",
+        "category": "物理类",
+        "score": 611.0,
+        "rank": 2529,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2023,
+        "province": "北京",
+        "category": "物理类",
+        "score": 614.0,
+        "rank": 4913,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2024,
+        "province": "北京",
+        "category": "物理类",
+        "score": 617.0,
+        "rank": 2702,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2025,
+        "province": "北京",
+        "category": "物理类",
+        "score": 620.0,
+        "rank": 4143,
+        "plan_count": 0,
+        "admit_count": 0
+      }
+    ]
+  },
+  {
+    "code": "",
+    "name": "中国传媒大学",
+    "province": "北京",
+    "type": "211 高校",
+    "tags": [
+      "211"
+    ],
+    "years": [
+      {
+        "year": 2021,
+        "province": "北京",
+        "category": "物理类",
+        "score": 598.0,
+        "rank": 2178,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2022,
+        "province": "北京",
+        "category": "物理类",
+        "score": 601.0,
+        "rank": 4646,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2023,
+        "province": "北京",
+        "category": "物理类",
+        "score": 604.0,
+        "rank": 4193,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2024,
+        "province": "北京",
+        "category": "物理类",
+        "score": 607.0,
+        "rank": 3243,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2025,
+        "province": "北京",
+        "category": "物理类",
+        "score": 610.0,
+        "rank": 1570,
+        "plan_count": 0,
+        "admit_count": 0
+      }
+    ]
+  },
+  {
+    "code": "",
+    "name": "中国政法大学",
+    "province": "北京",
+    "type": "211 高校",
+    "tags": [
+      "211"
+    ],
+    "years": [
+      {
+        "year": 2021,
+        "province": "北京",
+        "category": "物理类",
+        "score": 628.0,
+        "rank": 3034,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2022,
+        "province": "北京",
+        "category": "物理类",
+        "score": 631.0,
+        "rank": 1697,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2023,
+        "province": "北京",
+        "category": "物理类",
+        "score": 634.0,
+        "rank": 604,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2024,
+        "province": "北京",
+        "category": "物理类",
+        "score": 637.0,
+        "rank": 1396,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2025,
+        "province": "北京",
+        "category": "物理类",
+        "score": 640.0,
+        "rank": 2681,
+        "plan_count": 0,
+        "admit_count": 0
+      }
+    ]
+  },
+  {
+    "code": "",
+    "name": "中国科学技术大学",
+    "province": "安徽",
+    "type": "C9 联盟",
+    "tags": [
+      "C9"
+    ],
+    "years": [
+      {
+        "year": 2021,
+        "province": "北京",
+        "category": "综合",
+        "score": 660.0,
+        "rank": 203,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2022,
+        "province": "北京",
+        "category": "综合",
+        "score": 665.0,
+        "rank": 342,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2023,
+        "province": "北京",
+        "category": "综合",
+        "score": 670.0,
+        "rank": 442,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2024,
+        "province": "北京",
+        "category": "综合",
+        "score": 685.0,
+        "rank": 275,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2025,
+        "province": "安徽",
+        "category": "物理类",
+        "score": 675.0,
+        "rank": 992,
+        "plan_count": 0,
+        "admit_count": 0
+      }
+    ]
+  },
+  {
+    "code": "",
+    "name": "中央财经大学",
+    "province": "北京",
+    "type": "211 高校",
+    "tags": [
+      "211"
+    ],
+    "years": [
+      {
+        "year": 2021,
+        "province": "北京",
+        "category": "不限",
+        "score": 628.0,
+        "rank": 2272,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2022,
+        "province": "北京",
+        "category": "不限",
+        "score": 631.0,
+        "rank": 995,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2023,
+        "province": "北京",
+        "category": "不限",
+        "score": 634.0,
+        "rank": 1247,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2024,
+        "province": "北京",
+        "category": "不限",
+        "score": 637.0,
+        "rank": 1841,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2025,
+        "province": "北京",
+        "category": "不限",
+        "score": 640.0,
+        "rank": 1353,
+        "plan_count": 0,
+        "admit_count": 0
+      }
+    ]
+  },
+  {
+    "code": "",
+    "name": "中山大学",
+    "province": "广东",
+    "type": "211 高校",
+    "tags": [
+      "211"
+    ],
+    "years": [
+      {
+        "year": 2021,
+        "province": "北京",
+        "category": "物理类",
+        "score": 623.0,
+        "rank": 1815,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2022,
+        "province": "北京",
+        "category": "物理类",
+        "score": 626.0,
+        "rank": 2189,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2023,
+        "province": "北京",
+        "category": "物理类",
+        "score": 629.0,
+        "rank": 2778,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2024,
+        "province": "北京",
+        "category": "物理类",
+        "score": 632.0,
+        "rank": 2418,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2025,
+        "province": "北京",
+        "category": "物理类",
+        "score": 635.0,
+        "rank": 648,
+        "plan_count": 0,
+        "admit_count": 0
+      }
+    ]
+  },
+  {
+    "code": "",
+    "name": "云南大学",
+    "province": "云南",
+    "type": "211 高校",
+    "tags": [
+      "211"
+    ],
+    "years": [
+      {
+        "year": 2021,
+        "province": "云南",
+        "category": "物理类",
+        "score": 583.0,
+        "rank": 16924,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2022,
+        "province": "云南",
+        "category": "物理类",
+        "score": 586.0,
+        "rank": 6951,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2023,
+        "province": "云南",
+        "category": "物理类",
+        "score": 589.0,
+        "rank": 15599,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2024,
+        "province": "云南",
+        "category": "物理类",
+        "score": 592.0,
+        "rank": 15115,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2025,
+        "province": "云南",
+        "category": "物理类",
+        "score": 595.0,
+        "rank": 11652,
+        "plan_count": 0,
+        "admit_count": 0
+      }
+    ]
+  },
+  {
+    "code": "",
+    "name": "兰州大学",
+    "province": "甘肃",
+    "type": "211 高校",
+    "tags": [
+      "211"
+    ],
+    "years": [
+      {
+        "year": 2021,
+        "province": "北京",
+        "category": "物理类",
+        "score": 593.0,
+        "rank": 3411,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2022,
+        "province": "北京",
+        "category": "物理类",
+        "score": 596.0,
+        "rank": 6268,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2023,
+        "province": "北京",
+        "category": "物理类",
+        "score": 599.0,
+        "rank": 7814,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2024,
+        "province": "北京",
+        "category": "物理类",
+        "score": 602.0,
+        "rank": 7313,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2025,
+        "province": "北京",
+        "category": "物理类",
+        "score": 605.0,
+        "rank": 5587,
+        "plan_count": 0,
+        "admit_count": 0
+      }
+    ]
+  },
+  {
+    "code": "",
+    "name": "内蒙古大学",
+    "province": "内蒙古",
+    "type": "211 高校",
+    "tags": [
+      "211"
+    ],
+    "years": [
+      {
+        "year": 2021,
+        "province": "北京",
+        "category": "物理类",
+        "score": 568.0,
+        "rank": 10680,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2022,
+        "province": "北京",
+        "category": "物理类",
+        "score": 571.0,
+        "rank": 18184,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2023,
+        "province": "北京",
+        "category": "物理类",
+        "score": 574.0,
+        "rank": 15352,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2024,
+        "province": "北京",
+        "category": "物理类",
+        "score": 577.0,
+        "rank": 4049,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2025,
+        "province": "北京",
+        "category": "物理类",
+        "score": 580.0,
+        "rank": 8038,
+        "plan_count": 0,
+        "admit_count": 0
+      }
+    ]
+  },
+  {
+    "code": "",
+    "name": "北京交通大学",
+    "province": "北京",
+    "type": "211 高校",
+    "tags": [
+      "211"
+    ],
+    "years": [
+      {
+        "year": 2021,
+        "province": "北京",
+        "category": "物理类",
+        "score": 603.0,
+        "rank": 5547,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2022,
+        "province": "北京",
+        "category": "物理类",
+        "score": 606.0,
+        "rank": 1314,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2023,
+        "province": "北京",
+        "category": "物理类",
+        "score": 609.0,
+        "rank": 6089,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2024,
+        "province": "北京",
+        "category": "物理类",
+        "score": 612.0,
+        "rank": 1997,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2025,
+        "province": "北京",
+        "category": "物理类",
+        "score": 615.0,
+        "rank": 2826,
+        "plan_count": 0,
+        "admit_count": 0
+      }
+    ]
+  },
+  {
+    "code": "",
+    "name": "北京外国语大学",
+    "province": "北京",
+    "type": "211 高校",
+    "tags": [
+      "211"
+    ],
+    "years": [
+      {
+        "year": 2021,
+        "province": "北京",
+        "category": "物理类",
+        "score": 618.0,
+        "rank": 3433,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2022,
+        "province": "北京",
+        "category": "物理类",
+        "score": 621.0,
+        "rank": 2631,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2023,
+        "province": "北京",
+        "category": "物理类",
+        "score": 624.0,
+        "rank": 1047,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2024,
+        "province": "北京",
+        "category": "物理类",
+        "score": 627.0,
+        "rank": 3577,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2025,
+        "province": "北京",
+        "category": "物理类",
+        "score": 630.0,
+        "rank": 3055,
+        "plan_count": 0,
+        "admit_count": 0
+      }
+    ]
+  },
+  {
+    "code": "",
+    "name": "北京大学",
+    "province": "北京",
+    "type": "C9 联盟",
+    "tags": [
+      "C9"
+    ],
+    "years": [
+      {
+        "year": 2021,
+        "province": "北京",
+        "category": "物理类",
+        "score": 678.0,
+        "rank": 28,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2022,
+        "province": "北京",
+        "category": "物理类",
+        "score": 688.0,
+        "rank": 27,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2023,
+        "province": "北京",
+        "category": "物理类",
+        "score": 684.0,
+        "rank": 35,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2024,
+        "province": "北京",
+        "category": "综合",
+        "score": 697.0,
+        "rank": 20,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2025,
+        "province": "北京",
+        "category": "文科",
+        "score": 697.0,
+        "rank": 9,
+        "plan_count": 0,
+        "admit_count": 0
+      }
+    ]
+  },
+  {
+    "code": "",
+    "name": "北京理工大学",
+    "province": "北京",
+    "type": "211 高校",
+    "tags": [
+      "211"
+    ],
+    "years": [
+      {
+        "year": 2021,
+        "province": "北京",
+        "category": "物理类",
+        "score": 633.0,
+        "rank": 1406,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2022,
+        "province": "北京",
+        "category": "物理类",
+        "score": 636.0,
+        "rank": 379,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2023,
+        "province": "北京",
+        "category": "物理类",
+        "score": 639.0,
+        "rank": 337,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2024,
+        "province": "北京",
+        "category": "物理类",
+        "score": 642.0,
+        "rank": 1152,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2025,
+        "province": "北京",
+        "category": "物理类",
+        "score": 645.0,
+        "rank": 934,
+        "plan_count": 0,
+        "admit_count": 0
+      }
+    ]
+  },
+  {
+    "code": "",
+    "name": "北京科技大学",
+    "province": "北京",
+    "type": "211 高校",
+    "tags": [
+      "211"
+    ],
+    "years": [
+      {
+        "year": 2021,
+        "province": "北京",
+        "category": "物理类",
+        "score": 608.0,
+        "rank": 4284,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2022,
+        "province": "北京",
+        "category": "物理类",
+        "score": 611.0,
+        "rank": 4722,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2023,
+        "province": "北京",
+        "category": "物理类",
+        "score": 614.0,
+        "rank": 3668,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2024,
+        "province": "北京",
+        "category": "物理类",
+        "score": 617.0,
+        "rank": 1343,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2025,
+        "province": "北京",
+        "category": "物理类",
+        "score": 620.0,
+        "rank": 6494,
+        "plan_count": 0,
+        "admit_count": 0
+      }
+    ]
+  },
+  {
+    "code": "",
+    "name": "北京航空航天大学",
+    "province": "北京",
+    "type": "211 高校",
+    "tags": [
+      "211"
+    ],
+    "years": [
+      {
+        "year": 2021,
+        "province": "北京",
+        "category": "物理类",
+        "score": 639.0,
+        "rank": 1152,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2022,
+        "province": "北京",
+        "category": "物理类",
+        "score": 642.0,
+        "rank": 327,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2023,
+        "province": "北京",
+        "category": "物理类",
+        "score": 645.0,
+        "rank": 186,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2024,
+        "province": "北京",
+        "category": "物理类",
+        "score": 648.0,
+        "rank": 882,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2025,
+        "province": "北京",
+        "category": "物理类",
+        "score": 651.0,
+        "rank": 384,
+        "plan_count": 0,
+        "admit_count": 0
+      }
+    ]
+  },
+  {
+    "code": "",
+    "name": "北京邮电大学",
+    "province": "北京",
+    "type": "211 高校",
+    "tags": [
+      "211"
+    ],
+    "years": [
+      {
+        "year": 2021,
+        "province": "北京",
+        "category": "不限",
+        "score": 633.0,
+        "rank": 1839,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2022,
+        "province": "北京",
+        "category": "不限",
+        "score": 636.0,
+        "rank": 1458,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2023,
+        "province": "北京",
+        "category": "不限",
+        "score": 639.0,
+        "rank": 864,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2024,
+        "province": "北京",
+        "category": "不限",
+        "score": 642.0,
+        "rank": 1682,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2025,
+        "province": "北京",
+        "category": "不限",
+        "score": 645.0,
+        "rank": 381,
+        "plan_count": 0,
+        "admit_count": 0
+      }
+    ]
+  },
+  {
+    "code": "",
+    "name": "华东师范大学",
+    "province": "上海",
+    "type": "211 高校",
+    "tags": [
+      "211"
+    ],
+    "years": [
+      {
+        "year": 2021,
+        "province": "北京",
+        "category": "物理类",
+        "score": 608.0,
+        "rank": 2541,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2022,
+        "province": "北京",
+        "category": "物理类",
+        "score": 611.0,
+        "rank": 1939,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2023,
+        "province": "北京",
+        "category": "物理类",
+        "score": 614.0,
+        "rank": 3437,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2024,
+        "province": "北京",
+        "category": "物理类",
+        "score": 617.0,
+        "rank": 3149,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2025,
+        "province": "北京",
+        "category": "物理类",
+        "score": 620.0,
+        "rank": 1600,
+        "plan_count": 0,
+        "admit_count": 0
+      }
+    ]
+  },
+  {
+    "code": "",
+    "name": "华东理工大学",
+    "province": "上海",
+    "type": "211 高校",
+    "tags": [
+      "211"
+    ],
+    "years": [
+      {
+        "year": 2021,
+        "province": "北京",
+        "category": "物理类",
+        "score": 603.0,
+        "rank": 2374,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2022,
+        "province": "北京",
+        "category": "物理类",
+        "score": 606.0,
+        "rank": 5626,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2023,
+        "province": "北京",
+        "category": "物理类",
+        "score": 609.0,
+        "rank": 1809,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2024,
+        "province": "北京",
+        "category": "物理类",
+        "score": 612.0,
+        "rank": 814,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2025,
+        "province": "北京",
+        "category": "物理类",
+        "score": 615.0,
+        "rank": 4039,
+        "plan_count": 0,
+        "admit_count": 0
+      }
+    ]
+  },
+  {
+    "code": "",
+    "name": "华中科技大学",
+    "province": "湖北",
+    "type": "211 高校",
+    "tags": [
+      "211"
+    ],
+    "years": [
+      {
+        "year": 2021,
+        "province": "北京",
+        "category": "物理类",
+        "score": 643.0,
+        "rank": 725,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2022,
+        "province": "北京",
+        "category": "物理类",
+        "score": 646.0,
+        "rank": 549,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2023,
+        "province": "北京",
+        "category": "物理类",
+        "score": 649.0,
+        "rank": 762,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2024,
+        "province": "北京",
+        "category": "物理类",
+        "score": 652.0,
+        "rank": 1170,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2025,
+        "province": "北京",
+        "category": "物理类",
+        "score": 655.0,
+        "rank": 1577,
+        "plan_count": 0,
+        "admit_count": 0
+      }
+    ]
+  },
+  {
+    "code": "",
+    "name": "华南理工大学",
+    "province": "广东",
+    "type": "211 高校",
+    "tags": [
+      "211"
+    ],
+    "years": [
+      {
+        "year": 2021,
+        "province": "北京",
+        "category": "物理类",
+        "score": 613.0,
+        "rank": 2722,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2022,
+        "province": "北京",
+        "category": "物理类",
+        "score": 616.0,
+        "rank": 1496,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2023,
+        "province": "北京",
+        "category": "物理类",
+        "score": 619.0,
+        "rank": 1830,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2024,
+        "province": "北京",
+        "category": "物理类",
+        "score": 622.0,
+        "rank": 3391,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2025,
+        "province": "北京",
+        "category": "物理类",
+        "score": 625.0,
+        "rank": 3060,
+        "plan_count": 0,
+        "admit_count": 0
+      }
+    ]
+  },
+  {
+    "code": "",
+    "name": "南京大学",
+    "province": "江苏",
+    "type": "C9 联盟",
+    "tags": [
+      "C9"
+    ],
+    "years": [
+      {
+        "year": 2021,
+        "province": "北京",
+        "category": "综合",
+        "score": 645.0,
+        "rank": 345,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2022,
+        "province": "北京",
+        "category": "综合",
+        "score": 650.0,
+        "rank": 156,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2023,
+        "province": "北京",
+        "category": "综合",
+        "score": 655.0,
+        "rank": 256,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2024,
+        "province": "北京",
+        "category": "综合",
+        "score": 670.0,
+        "rank": 382,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2025,
+        "province": "北京",
+        "category": "不限",
+        "score": 670.0,
+        "rank": 955,
+        "plan_count": 0,
+        "admit_count": 0
+      }
+    ]
+  },
+  {
+    "code": "",
+    "name": "南京理工大学",
+    "province": "江苏",
+    "type": "211 高校",
+    "tags": [
+      "211"
+    ],
+    "years": [
+      {
+        "year": 2021,
+        "province": "北京",
+        "category": "物理类",
+        "score": 608.0,
+        "rank": 3569,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2022,
+        "province": "北京",
+        "category": "物理类",
+        "score": 611.0,
+        "rank": 4083,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2023,
+        "province": "北京",
+        "category": "物理类",
+        "score": 614.0,
+        "rank": 6028,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2024,
+        "province": "北京",
+        "category": "物理类",
+        "score": 617.0,
+        "rank": 3928,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2025,
+        "province": "北京",
+        "category": "物理类",
+        "score": 620.0,
+        "rank": 1288,
+        "plan_count": 0,
+        "admit_count": 0
+      }
+    ]
+  },
+  {
+    "code": "",
+    "name": "南京航空航天大学",
+    "province": "江苏",
+    "type": "211 高校",
+    "tags": [
+      "211"
+    ],
+    "years": [
+      {
+        "year": 2021,
+        "province": "北京",
+        "category": "物理类",
+        "score": 613.0,
+        "rank": 6192,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2022,
+        "province": "北京",
+        "category": "物理类",
+        "score": 616.0,
+        "rank": 4155,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2023,
+        "province": "北京",
+        "category": "物理类",
+        "score": 619.0,
+        "rank": 3117,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2024,
+        "province": "北京",
+        "category": "物理类",
+        "score": 622.0,
+        "rank": 2517,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2025,
+        "province": "北京",
+        "category": "物理类",
+        "score": 625.0,
+        "rank": 4861,
+        "plan_count": 0,
+        "admit_count": 0
+      }
+    ]
+  },
+  {
+    "code": "",
+    "name": "南开大学",
+    "province": "天津",
+    "type": "211 高校",
+    "tags": [
+      "211"
+    ],
+    "years": [
+      {
+        "year": 2021,
+        "province": "北京",
+        "category": "物理类",
+        "score": 628.0,
+        "rank": 2913,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2022,
+        "province": "北京",
+        "category": "物理类",
+        "score": 631.0,
+        "rank": 1331,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2023,
+        "province": "北京",
+        "category": "物理类",
+        "score": 634.0,
+        "rank": 2236,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2024,
+        "province": "北京",
+        "category": "物理类",
+        "score": 637.0,
+        "rank": 772,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2025,
+        "province": "北京",
+        "category": "物理类",
+        "score": 640.0,
+        "rank": 597,
+        "plan_count": 0,
+        "admit_count": 0
+      }
+    ]
+  },
+  {
+    "code": "",
+    "name": "南昌大学",
+    "province": "江西",
+    "type": "211 高校",
+    "tags": [
+      "211"
+    ],
+    "years": [
+      {
+        "year": 2021,
+        "province": "江西",
+        "category": "物理类",
+        "score": 583.0,
+        "rank": 25803,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2022,
+        "province": "江西",
+        "category": "物理类",
+        "score": 586.0,
+        "rank": 19896,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2023,
+        "province": "江西",
+        "category": "物理类",
+        "score": 589.0,
+        "rank": 12988,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2024,
+        "province": "江西",
+        "category": "物理类",
+        "score": 592.0,
+        "rank": 8945,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2025,
+        "province": "江西",
+        "category": "物理类",
+        "score": 595.0,
+        "rank": 6151,
+        "plan_count": 0,
+        "admit_count": 0
+      }
+    ]
+  },
+  {
+    "code": "",
+    "name": "厦门大学",
+    "province": "福建",
+    "type": "211 高校",
+    "tags": [
+      "211"
+    ],
+    "years": [
+      {
+        "year": 2021,
+        "province": "北京",
+        "category": "物理类",
+        "score": 618.0,
+        "rank": 1776,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2022,
+        "province": "北京",
+        "category": "物理类",
+        "score": 621.0,
+        "rank": 2777,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2023,
+        "province": "北京",
+        "category": "物理类",
+        "score": 624.0,
+        "rank": 2473,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2024,
+        "province": "北京",
+        "category": "物理类",
+        "score": 627.0,
+        "rank": 1417,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2025,
+        "province": "北京",
+        "category": "物理类",
+        "score": 630.0,
+        "rank": 995,
+        "plan_count": 0,
+        "admit_count": 0
+      }
+    ]
+  },
+  {
+    "code": "",
+    "name": "吉林大学",
+    "province": "吉林",
+    "type": "211 高校",
+    "tags": [
+      "211"
+    ],
+    "years": [
+      {
+        "year": 2021,
+        "province": "北京",
+        "category": "物理类",
+        "score": 603.0,
+        "rank": 1139,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2022,
+        "province": "北京",
+        "category": "物理类",
+        "score": 606.0,
+        "rank": 2903,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2023,
+        "province": "北京",
+        "category": "物理类",
+        "score": 609.0,
+        "rank": 4786,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2024,
+        "province": "北京",
+        "category": "物理类",
+        "score": 612.0,
+        "rank": 4828,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2025,
+        "province": "北京",
+        "category": "物理类",
+        "score": 615.0,
+        "rank": 4031,
+        "plan_count": 0,
+        "admit_count": 0
+      }
+    ]
+  },
+  {
+    "code": "",
+    "name": "同济大学",
+    "province": "上海",
+    "type": "211 高校",
+    "tags": [
+      "211"
+    ],
+    "years": [
+      {
+        "year": 2021,
+        "province": "北京",
+        "category": "物化",
+        "score": 658.0,
+        "rank": 350,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2022,
+        "province": "北京",
+        "category": "物化",
+        "score": 661.0,
+        "rank": 480,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2023,
+        "province": "北京",
+        "category": "物化",
+        "score": 664.0,
+        "rank": 367,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2024,
+        "province": "北京",
+        "category": "物化",
+        "score": 667.0,
+        "rank": 879,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2025,
+        "province": "北京",
+        "category": "物化",
+        "score": 670.0,
+        "rank": 276,
+        "plan_count": 0,
+        "admit_count": 0
+      }
+    ]
+  },
+  {
+    "code": "",
+    "name": "哈尔滨工业大学",
+    "province": "黑龙江",
+    "type": "C9 联盟",
+    "tags": [
+      "C9"
+    ],
+    "years": [
+      {
+        "year": 2021,
+        "province": "北京",
+        "category": "综合",
+        "score": 635.0,
+        "rank": 614,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2022,
+        "province": "北京",
+        "category": "综合",
+        "score": 640.0,
+        "rank": 1189,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2023,
+        "province": "北京",
+        "category": "综合",
+        "score": 645.0,
+        "rank": 556,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2024,
+        "province": "北京",
+        "category": "综合",
+        "score": 660.0,
+        "rank": 436,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2025,
+        "province": "北京",
+        "category": "物理类",
+        "score": 623.0,
+        "rank": 979,
+        "plan_count": 0,
+        "admit_count": 0
+      }
+    ]
+  },
+  {
+    "code": "",
+    "name": "哈尔滨工程大学",
+    "province": "黑龙江",
+    "type": "211 高校",
+    "tags": [
+      "211"
+    ],
+    "years": [
+      {
+        "year": 2021,
+        "province": "黑龙江",
+        "category": "物理类",
+        "score": 593.0,
+        "rank": 11095,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2022,
+        "province": "黑龙江",
+        "category": "物理类",
+        "score": 596.0,
+        "rank": 14148,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2023,
+        "province": "黑龙江",
+        "category": "物理类",
+        "score": 599.0,
+        "rank": 4718,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2024,
+        "province": "黑龙江",
+        "category": "物理类",
+        "score": 602.0,
+        "rank": 4218,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2025,
+        "province": "黑龙江",
+        "category": "物理类",
+        "score": 605.0,
+        "rank": 7743,
+        "plan_count": 0,
+        "admit_count": 0
+      }
+    ]
+  },
+  {
+    "code": "",
+    "name": "四川大学",
+    "province": "四川",
+    "type": "211 高校",
+    "tags": [
+      "211"
+    ],
+    "years": [
+      {
+        "year": 2021,
+        "province": "北京",
+        "category": "物理类",
+        "score": 618.0,
+        "rank": 2629,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2022,
+        "province": "北京",
+        "category": "物理类",
+        "score": 621.0,
+        "rank": 959,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2023,
+        "province": "北京",
+        "category": "物理类",
+        "score": 624.0,
+        "rank": 2204,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2024,
+        "province": "北京",
+        "category": "物理类",
+        "score": 627.0,
+        "rank": 2882,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2025,
+        "province": "北京",
+        "category": "物理类",
+        "score": 630.0,
+        "rank": 2177,
+        "plan_count": 0,
+        "admit_count": 0
+      }
+    ]
+  },
+  {
+    "code": "",
+    "name": "复旦大学",
+    "province": "上海",
+    "type": "C9 联盟",
+    "tags": [
+      "C9"
+    ],
+    "years": [
+      {
+        "year": 2021,
+        "province": "北京",
+        "category": "综合",
+        "score": 660.0,
+        "rank": 270,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2022,
+        "province": "北京",
+        "category": "综合",
+        "score": 665.0,
+        "rank": 186,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2023,
+        "province": "北京",
+        "category": "综合",
+        "score": 670.0,
+        "rank": 175,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2024,
+        "province": "北京",
+        "category": "历史类",
+        "score": 678.0,
+        "rank": 18,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2025,
+        "province": "北京",
+        "category": "历史类",
+        "score": 679.0,
+        "rank": 42,
+        "plan_count": 0,
+        "admit_count": 0
+      }
+    ]
+  },
+  {
+    "code": "",
+    "name": "大连海事大学",
+    "province": "辽宁",
+    "type": "211 高校",
+    "tags": [
+      "211"
+    ],
+    "years": [
+      {
+        "year": 2021,
+        "province": "辽宁",
+        "category": "物理类",
+        "score": 583.0,
+        "rank": 13839,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2022,
+        "province": "辽宁",
+        "category": "物理类",
+        "score": 586.0,
+        "rank": 7138,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2023,
+        "province": "辽宁",
+        "category": "物理类",
+        "score": 589.0,
+        "rank": 10554,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2024,
+        "province": "辽宁",
+        "category": "物理类",
+        "score": 592.0,
+        "rank": 10936,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2025,
+        "province": "辽宁",
+        "category": "物理类",
+        "score": 595.0,
+        "rank": 14136,
+        "plan_count": 0,
+        "admit_count": 0
+      }
+    ]
+  },
+  {
+    "code": "",
+    "name": "大连理工大学",
+    "province": "辽宁",
+    "type": "211 高校",
+    "tags": [
+      "211"
+    ],
+    "years": [
+      {
+        "year": 2021,
+        "province": "北京",
+        "category": "物理类",
+        "score": 613.0,
+        "rank": 2007,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2022,
+        "province": "北京",
+        "category": "物理类",
+        "score": 616.0,
+        "rank": 1539,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2023,
+        "province": "北京",
+        "category": "物理类",
+        "score": 619.0,
+        "rank": 1427,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2024,
+        "province": "北京",
+        "category": "物理类",
+        "score": 622.0,
+        "rank": 3771,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2025,
+        "province": "北京",
+        "category": "物理类",
+        "score": 625.0,
+        "rank": 1462,
+        "plan_count": 0,
+        "admit_count": 0
+      }
+    ]
+  },
+  {
+    "code": "",
+    "name": "天津大学",
+    "province": "天津",
+    "type": "211 高校",
+    "tags": [
+      "211"
+    ],
+    "years": [
+      {
+        "year": 2021,
+        "province": "北京",
+        "category": "物理类",
+        "score": 623.0,
+        "rank": 2458,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2022,
+        "province": "北京",
+        "category": "物理类",
+        "score": 626.0,
+        "rank": 1517,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2023,
+        "province": "北京",
+        "category": "物理类",
+        "score": 629.0,
+        "rank": 1685,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2024,
+        "province": "北京",
+        "category": "物理类",
+        "score": 632.0,
+        "rank": 1925,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2025,
+        "province": "北京",
+        "category": "物理类",
+        "score": 635.0,
+        "rank": 2100,
+        "plan_count": 0,
+        "admit_count": 0
+      }
+    ]
+  },
+  {
+    "code": "",
+    "name": "太原理工大学",
+    "province": "山西",
+    "type": "211 高校",
+    "tags": [
+      "211"
+    ],
+    "years": [
+      {
+        "year": 2021,
+        "province": "北京",
+        "category": "物理类",
+        "score": 578.0,
+        "rank": 11839,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2022,
+        "province": "北京",
+        "category": "物理类",
+        "score": 581.0,
+        "rank": 7838,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2023,
+        "province": "北京",
+        "category": "物理类",
+        "score": 584.0,
+        "rank": 2522,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2024,
+        "province": "北京",
+        "category": "物理类",
+        "score": 587.0,
+        "rank": 8314,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2025,
+        "province": "北京",
+        "category": "物理类",
+        "score": 590.0,
+        "rank": 5562,
+        "plan_count": 0,
+        "admit_count": 0
+      }
+    ]
+  },
+  {
+    "code": "",
+    "name": "安徽大学",
+    "province": "安徽",
+    "type": "211 高校",
+    "tags": [
+      "211"
+    ],
+    "years": [
+      {
+        "year": 2021,
+        "province": "安徽",
+        "category": "物理类",
+        "score": 588.0,
+        "rank": 11929,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2022,
+        "province": "安徽",
+        "category": "物理类",
+        "score": 591.0,
+        "rank": 25314,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2023,
+        "province": "安徽",
+        "category": "物理类",
+        "score": 594.0,
+        "rank": 20849,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2024,
+        "province": "安徽",
+        "category": "物理类",
+        "score": 597.0,
+        "rank": 14635,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2025,
+        "province": "安徽",
+        "category": "物理类",
+        "score": 600.0,
+        "rank": 12235,
+        "plan_count": 0,
+        "admit_count": 0
+      }
+    ]
+  },
+  {
+    "code": "",
+    "name": "对外经济贸易大学",
+    "province": "北京",
+    "type": "211 高校",
+    "tags": [
+      "211"
+    ],
+    "years": [
+      {
+        "year": 2021,
+        "province": "北京",
+        "category": "不限",
+        "score": 623.0,
+        "rank": 1207,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2022,
+        "province": "北京",
+        "category": "不限",
+        "score": 626.0,
+        "rank": 654,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2023,
+        "province": "北京",
+        "category": "不限",
+        "score": 629.0,
+        "rank": 1323,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2024,
+        "province": "北京",
+        "category": "不限",
+        "score": 632.0,
+        "rank": 1001,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2025,
+        "province": "北京",
+        "category": "不限",
+        "score": 635.0,
+        "rank": 1649,
+        "plan_count": 0,
+        "admit_count": 0
+      }
+    ]
+  },
+  {
+    "code": "",
+    "name": "山东大学",
+    "province": "山东",
+    "type": "211 高校",
+    "tags": [
+      "211"
+    ],
+    "years": [
+      {
+        "year": 2021,
+        "province": "北京",
+        "category": "物理类",
+        "score": 613.0,
+        "rank": 3884,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2022,
+        "province": "北京",
+        "category": "物理类",
+        "score": 616.0,
+        "rank": 2335,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2023,
+        "province": "北京",
+        "category": "物理类",
+        "score": 619.0,
+        "rank": 1137,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2024,
+        "province": "北京",
+        "category": "物理类",
+        "score": 622.0,
+        "rank": 3282,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2025,
+        "province": "北京",
+        "category": "物理类",
+        "score": 625.0,
+        "rank": 3493,
+        "plan_count": 0,
+        "admit_count": 0
+      }
+    ]
+  },
+  {
+    "code": "",
+    "name": "广西大学",
+    "province": "广西",
+    "type": "211 高校",
+    "tags": [
+      "211"
+    ],
+    "years": [
+      {
+        "year": 2021,
+        "province": "广西",
+        "category": "物理类",
+        "score": 563.0,
+        "rank": 11900,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2022,
+        "province": "广西",
+        "category": "物理类",
+        "score": 566.0,
+        "rank": 22823,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2023,
+        "province": "广西",
+        "category": "物理类",
+        "score": 569.0,
+        "rank": 32795,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2024,
+        "province": "广西",
+        "category": "物理类",
+        "score": 572.0,
+        "rank": 29577,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2025,
+        "province": "广西",
+        "category": "物理类",
+        "score": 575.0,
+        "rank": 34344,
+        "plan_count": 0,
+        "admit_count": 0
+      }
+    ]
+  },
+  {
+    "code": "",
+    "name": "新疆大学",
+    "province": "新疆",
+    "type": "211 高校",
+    "tags": [
+      "211"
+    ],
+    "years": [
+      {
+        "year": 2021,
+        "province": "新疆",
+        "category": "理科",
+        "score": 548.0,
+        "rank": 13830,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2022,
+        "province": "新疆",
+        "category": "理科",
+        "score": 551.0,
+        "rank": 15273,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2023,
+        "province": "新疆",
+        "category": "理科",
+        "score": 554.0,
+        "rank": 21268,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2024,
+        "province": "新疆",
+        "category": "理科",
+        "score": 557.0,
+        "rank": 2702,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2025,
+        "province": "新疆",
+        "category": "理科",
+        "score": 560.0,
+        "rank": 11647,
+        "plan_count": 0,
+        "admit_count": 0
+      }
+    ]
+  },
+  {
+    "code": "",
+    "name": "武汉大学",
+    "province": "湖北",
+    "type": "211 高校",
+    "tags": [
+      "211"
+    ],
+    "years": [
+      {
+        "year": 2021,
+        "province": "北京",
+        "category": "物理类",
+        "score": 648.0,
+        "rank": 528,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2022,
+        "province": "北京",
+        "category": "物理类",
+        "score": 651.0,
+        "rank": 1499,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2023,
+        "province": "北京",
+        "category": "物理类",
+        "score": 654.0,
+        "rank": 1306,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2024,
+        "province": "北京",
+        "category": "物理类",
+        "score": 657.0,
+        "rank": 425,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2025,
+        "province": "北京",
+        "category": "物理类",
+        "score": 660.0,
+        "rank": 540,
+        "plan_count": 0,
+        "admit_count": 0
+      }
+    ]
+  },
+  {
+    "code": "",
+    "name": "武汉理工大学",
+    "province": "湖北",
+    "type": "211 高校",
+    "tags": [
+      "211"
+    ],
+    "years": [
+      {
+        "year": 2021,
+        "province": "北京",
+        "category": "物理类",
+        "score": 593.0,
+        "rank": 3460,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2022,
+        "province": "北京",
+        "category": "物理类",
+        "score": 596.0,
+        "rank": 4633,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2023,
+        "province": "北京",
+        "category": "物理类",
+        "score": 599.0,
+        "rank": 4245,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2024,
+        "province": "北京",
+        "category": "物理类",
+        "score": 602.0,
+        "rank": 6912,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2025,
+        "province": "北京",
+        "category": "物理类",
+        "score": 605.0,
+        "rank": 2740,
+        "plan_count": 0,
+        "admit_count": 0
+      }
+    ]
+  },
+  {
+    "code": "",
+    "name": "河北工业大学",
+    "province": "天津",
+    "type": "211 高校",
+    "tags": [
+      "211"
+    ],
+    "years": [
+      {
+        "year": 2021,
+        "province": "北京",
+        "category": "物理类",
+        "score": 588.0,
+        "rank": 7521,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2022,
+        "province": "北京",
+        "category": "物理类",
+        "score": 591.0,
+        "rank": 8384,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2023,
+        "province": "北京",
+        "category": "物理类",
+        "score": 594.0,
+        "rank": 4438,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2024,
+        "province": "北京",
+        "category": "物理类",
+        "score": 597.0,
+        "rank": 4560,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2025,
+        "province": "北京",
+        "category": "物理类",
+        "score": 600.0,
+        "rank": 4180,
+        "plan_count": 0,
+        "admit_count": 0
+      }
+    ]
+  },
+  {
+    "code": "",
+    "name": "浙江大学",
+    "province": "浙江",
+    "type": "C9 联盟",
+    "tags": [
+      "C9"
+    ],
+    "years": [
+      {
+        "year": 2021,
+        "province": "北京",
+        "category": "综合",
+        "score": 655.0,
+        "rank": 77,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2022,
+        "province": "北京",
+        "category": "综合",
+        "score": 660.0,
+        "rank": 389,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2023,
+        "province": "北京",
+        "category": "综合",
+        "score": 665.0,
+        "rank": 234,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2024,
+        "province": "北京",
+        "category": "理工",
+        "score": 679.0,
+        "rank": 946,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2025,
+        "province": "浙江",
+        "category": "综合",
+        "score": 658.0,
+        "rank": 940,
+        "plan_count": 0,
+        "admit_count": 0
+      }
+    ]
+  },
+  {
+    "code": "",
+    "name": "海南大学",
+    "province": "海南",
+    "type": "211 高校",
+    "tags": [
+      "211"
+    ],
+    "years": [
+      {
+        "year": 2021,
+        "province": "海南",
+        "category": "综合",
+        "score": 703.0,
+        "rank": 2031,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2022,
+        "province": "海南",
+        "category": "综合",
+        "score": 706.0,
+        "rank": 1730,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2023,
+        "province": "海南",
+        "category": "综合",
+        "score": 709.0,
+        "rank": 2466,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2024,
+        "province": "海南",
+        "category": "综合",
+        "score": 712.0,
+        "rank": 2016,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2025,
+        "province": "海南",
+        "category": "综合",
+        "score": 715.0,
+        "rank": 2647,
+        "plan_count": 0,
+        "admit_count": 0
+      }
+    ]
+  },
+  {
+    "code": "",
+    "name": "清华大学",
+    "province": "北京",
+    "type": "C9 联盟",
+    "tags": [
+      "C9"
+    ],
+    "years": [
+      {
+        "year": 2021,
+        "province": "北京",
+        "category": "综合",
+        "score": 674.0,
+        "rank": 15,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2022,
+        "province": "北京",
+        "category": "综合",
+        "score": 681.0,
+        "rank": 6,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2023,
+        "province": "北京",
+        "category": "综合",
+        "score": 688.0,
+        "rank": 21,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2024,
+        "province": "上海",
+        "category": "物理类",
+        "score": 620.0,
+        "rank": 44,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2025,
+        "province": "北京",
+        "category": "不限",
+        "score": 689.0,
+        "rank": 655,
+        "plan_count": 0,
+        "admit_count": 0
+      }
+    ]
+  },
+  {
+    "code": "",
+    "name": "湖南大学",
+    "province": "湖南",
+    "type": "211 高校",
+    "tags": [
+      "211"
+    ],
+    "years": [
+      {
+        "year": 2021,
+        "province": "北京",
+        "category": "物理类",
+        "score": 603.0,
+        "rank": 1310,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2022,
+        "province": "北京",
+        "category": "物理类",
+        "score": 606.0,
+        "rank": 1118,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2023,
+        "province": "北京",
+        "category": "物理类",
+        "score": 609.0,
+        "rank": 3553,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2024,
+        "province": "北京",
+        "category": "物理类",
+        "score": 612.0,
+        "rank": 2426,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2025,
+        "province": "北京",
+        "category": "物理类",
+        "score": 615.0,
+        "rank": 2063,
+        "plan_count": 0,
+        "admit_count": 0
+      }
+    ]
+  },
+  {
+    "code": "",
+    "name": "电子科技大学",
+    "province": "四川",
+    "type": "211 高校",
+    "tags": [
+      "211"
+    ],
+    "years": [
+      {
+        "year": 2021,
+        "province": "北京",
+        "category": "物理类",
+        "score": 628.0,
+        "rank": 1922,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2022,
+        "province": "北京",
+        "category": "物理类",
+        "score": 631.0,
+        "rank": 1628,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2023,
+        "province": "北京",
+        "category": "物理类",
+        "score": 634.0,
+        "rank": 494,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2024,
+        "province": "北京",
+        "category": "物理类",
+        "score": 637.0,
+        "rank": 1969,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2025,
+        "province": "北京",
+        "category": "物理类",
+        "score": 640.0,
+        "rank": 557,
+        "plan_count": 0,
+        "admit_count": 0
+      }
+    ]
+  },
+  {
+    "code": "",
+    "name": "石河子大学",
+    "province": "新疆",
+    "type": "211 高校",
+    "tags": [
+      "211"
+    ],
+    "years": [
+      {
+        "year": 2021,
+        "province": "新疆",
+        "category": "理科",
+        "score": 538.0,
+        "rank": 4952,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2022,
+        "province": "新疆",
+        "category": "理科",
+        "score": 541.0,
+        "rank": 13360,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2023,
+        "province": "新疆",
+        "category": "理科",
+        "score": 544.0,
+        "rank": 15565,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2024,
+        "province": "新疆",
+        "category": "理科",
+        "score": 547.0,
+        "rank": 23591,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2025,
+        "province": "新疆",
+        "category": "理科",
+        "score": 550.0,
+        "rank": 8030,
+        "plan_count": 0,
+        "admit_count": 0
+      }
+    ]
+  },
+  {
+    "code": "",
+    "name": "福州大学",
+    "province": "福建",
+    "type": "211 高校",
+    "tags": [
+      "211"
+    ],
+    "years": [
+      {
+        "year": 2021,
+        "province": "福建",
+        "category": "物理类",
+        "score": 593.0,
+        "rank": 15420,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2022,
+        "province": "福建",
+        "category": "物理类",
+        "score": 596.0,
+        "rank": 16892,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2023,
+        "province": "福建",
+        "category": "物理类",
+        "score": 599.0,
+        "rank": 9008,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2024,
+        "province": "福建",
+        "category": "物理类",
+        "score": 602.0,
+        "rank": 6609,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2025,
+        "province": "福建",
+        "category": "物理类",
+        "score": 605.0,
+        "rank": 12998,
+        "plan_count": 0,
+        "admit_count": 0
+      }
+    ]
+  },
+  {
+    "code": "",
+    "name": "苏州大学",
+    "province": "江苏",
+    "type": "211 高校",
+    "tags": [
+      "211"
+    ],
+    "years": [
+      {
+        "year": 2021,
+        "province": "北京",
+        "category": "物理类",
+        "score": 598.0,
+        "rank": 7659,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2022,
+        "province": "北京",
+        "category": "物理类",
+        "score": 601.0,
+        "rank": 3626,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2023,
+        "province": "北京",
+        "category": "物理类",
+        "score": 604.0,
+        "rank": 3879,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2024,
+        "province": "北京",
+        "category": "物理类",
+        "score": 607.0,
+        "rank": 1428,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2025,
+        "province": "北京",
+        "category": "物理类",
+        "score": 610.0,
+        "rank": 1313,
+        "plan_count": 0,
+        "admit_count": 0
+      }
+    ]
+  },
+  {
+    "code": "",
+    "name": "西北大学",
+    "province": "陕西",
+    "type": "211 高校",
+    "tags": [
+      "211"
+    ],
+    "years": [
+      {
+        "year": 2021,
+        "province": "陕西",
+        "category": "物理类",
+        "score": 578.0,
+        "rank": 8058,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2022,
+        "province": "陕西",
+        "category": "物理类",
+        "score": 581.0,
+        "rank": 21892,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2023,
+        "province": "陕西",
+        "category": "物理类",
+        "score": 584.0,
+        "rank": 19742,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2024,
+        "province": "陕西",
+        "category": "物理类",
+        "score": 587.0,
+        "rank": 11321,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2025,
+        "province": "陕西",
+        "category": "物理类",
+        "score": 590.0,
+        "rank": 6943,
+        "plan_count": 0,
+        "admit_count": 0
+      }
+    ]
+  },
+  {
+    "code": "",
+    "name": "西北工业大学",
+    "province": "陕西",
+    "type": "211 高校",
+    "tags": [
+      "211"
+    ],
+    "years": [
+      {
+        "year": 2021,
+        "province": "北京",
+        "category": "物理类",
+        "score": 623.0,
+        "rank": 2532,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2022,
+        "province": "北京",
+        "category": "物理类",
+        "score": 626.0,
+        "rank": 2535,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2023,
+        "province": "北京",
+        "category": "物理类",
+        "score": 629.0,
+        "rank": 1597,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2024,
+        "province": "北京",
+        "category": "物理类",
+        "score": 632.0,
+        "rank": 2933,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2025,
+        "province": "北京",
+        "category": "物理类",
+        "score": 635.0,
+        "rank": 1077,
+        "plan_count": 0,
+        "admit_count": 0
+      }
+    ]
+  },
+  {
+    "code": "",
+    "name": "西南交通大学",
+    "province": "四川",
+    "type": "211 高校",
+    "tags": [
+      "211"
+    ],
+    "years": [
+      {
+        "year": 2021,
+        "province": "北京",
+        "category": "物理类",
+        "score": 598.0,
+        "rank": 9640,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2022,
+        "province": "北京",
+        "category": "物理类",
+        "score": 601.0,
+        "rank": 9559,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2023,
+        "province": "北京",
+        "category": "物理类",
+        "score": 604.0,
+        "rank": 4611,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2024,
+        "province": "北京",
+        "category": "物理类",
+        "score": 607.0,
+        "rank": 5575,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2025,
+        "province": "北京",
+        "category": "物理类",
+        "score": 610.0,
+        "rank": 1661,
+        "plan_count": 0,
+        "admit_count": 0
+      }
+    ]
+  },
+  {
+    "code": "",
+    "name": "西南财经大学",
+    "province": "四川",
+    "type": "211 高校",
+    "tags": [
+      "211"
+    ],
+    "years": [
+      {
+        "year": 2021,
+        "province": "北京",
+        "category": "物理类",
+        "score": 613.0,
+        "rank": 1640,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2022,
+        "province": "北京",
+        "category": "物理类",
+        "score": 616.0,
+        "rank": 4706,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2023,
+        "province": "北京",
+        "category": "物理类",
+        "score": 619.0,
+        "rank": 6063,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2024,
+        "province": "北京",
+        "category": "物理类",
+        "score": 622.0,
+        "rank": 3992,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2025,
+        "province": "北京",
+        "category": "物理类",
+        "score": 625.0,
+        "rank": 3605,
+        "plan_count": 0,
+        "admit_count": 0
+      }
+    ]
+  },
+  {
+    "code": "",
+    "name": "西安交通大学",
+    "province": "陕西",
+    "type": "C9 联盟",
+    "tags": [
+      "C9"
+    ],
+    "years": [
+      {
+        "year": 2021,
+        "province": "北京",
+        "category": "综合",
+        "score": 625.0,
+        "rank": 1028,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2022,
+        "province": "北京",
+        "category": "综合",
+        "score": 630.0,
+        "rank": 1980,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2023,
+        "province": "北京",
+        "category": "综合",
+        "score": 635.0,
+        "rank": 1844,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2024,
+        "province": "北京",
+        "category": "综合",
+        "score": 650.0,
+        "rank": 650,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2025,
+        "province": "北京",
+        "category": "物理类",
+        "score": 623.0,
+        "rank": 1173,
+        "plan_count": 0,
+        "admit_count": 0
+      }
+    ]
+  },
+  {
+    "code": "",
+    "name": "西安电子科技大学",
+    "province": "陕西",
+    "type": "211 高校",
+    "tags": [
+      "211"
+    ],
+    "years": [
+      {
+        "year": 2021,
+        "province": "陕西",
+        "category": "物理类",
+        "score": 613.0,
+        "rank": 6458,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2022,
+        "province": "陕西",
+        "category": "物理类",
+        "score": 616.0,
+        "rank": 9788,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2023,
+        "province": "陕西",
+        "category": "物理类",
+        "score": 619.0,
+        "rank": 3458,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2024,
+        "province": "陕西",
+        "category": "物理类",
+        "score": 622.0,
+        "rank": 8752,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2025,
+        "province": "陕西",
+        "category": "物理类",
+        "score": 625.0,
+        "rank": 3429,
+        "plan_count": 0,
+        "admit_count": 0
+      }
+    ]
+  },
+  {
+    "code": "",
+    "name": "西藏大学",
+    "province": "西藏",
+    "type": "211 高校",
+    "tags": [
+      "211"
+    ],
+    "years": [
+      {
+        "year": 2021,
+        "province": "西藏",
+        "category": "理科",
+        "score": 508.0,
+        "rank": 6179,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2022,
+        "province": "西藏",
+        "category": "理科",
+        "score": 511.0,
+        "rank": 6800,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2023,
+        "province": "西藏",
+        "category": "理科",
+        "score": 514.0,
+        "rank": 5988,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2024,
+        "province": "西藏",
+        "category": "理科",
+        "score": 517.0,
+        "rank": 4108,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2025,
+        "province": "西藏",
+        "category": "理科",
+        "score": 520.0,
+        "rank": 4824,
+        "plan_count": 0,
+        "admit_count": 0
+      }
+    ]
+  },
+  {
+    "code": "",
+    "name": "贵州大学",
+    "province": "贵州",
+    "type": "211 高校",
+    "tags": [
+      "211"
+    ],
+    "years": [
+      {
+        "year": 2021,
+        "province": "贵州",
+        "category": "物理类",
+        "score": 573.0,
+        "rank": 28930,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2022,
+        "province": "贵州",
+        "category": "物理类",
+        "score": 576.0,
+        "rank": 24567,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2023,
+        "province": "贵州",
+        "category": "物理类",
+        "score": 579.0,
+        "rank": 6033,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2024,
+        "province": "贵州",
+        "category": "物理类",
+        "score": 582.0,
+        "rank": 18160,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2025,
+        "province": "贵州",
+        "category": "物理类",
+        "score": 585.0,
+        "rank": 5135,
+        "plan_count": 0,
+        "admit_count": 0
+      }
+    ]
+  },
+  {
+    "code": "",
+    "name": "辽宁大学",
+    "province": "辽宁",
+    "type": "211 高校",
+    "tags": [
+      "211"
+    ],
+    "years": [
+      {
+        "year": 2021,
+        "province": "辽宁",
+        "category": "物理类",
+        "score": 568.0,
+        "rank": 18488,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2022,
+        "province": "辽宁",
+        "category": "物理类",
+        "score": 571.0,
+        "rank": 26267,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2023,
+        "province": "辽宁",
+        "category": "物理类",
+        "score": 574.0,
+        "rank": 22266,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2024,
+        "province": "辽宁",
+        "category": "物理类",
+        "score": 577.0,
+        "rank": 14297,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2025,
+        "province": "辽宁",
+        "category": "物理类",
+        "score": 580.0,
+        "rank": 20527,
+        "plan_count": 0,
+        "admit_count": 0
+      }
+    ]
+  },
+  {
+    "code": "",
+    "name": "郑州大学",
+    "province": "河南",
+    "type": "211 高校",
+    "tags": [
+      "211"
+    ],
+    "years": [
+      {
+        "year": 2021,
+        "province": "北京",
+        "category": "物理类",
+        "score": 588.0,
+        "rank": 7152,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2022,
+        "province": "北京",
+        "category": "物理类",
+        "score": 591.0,
+        "rank": 5628,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2023,
+        "province": "北京",
+        "category": "物理类",
+        "score": 594.0,
+        "rank": 9085,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2024,
+        "province": "北京",
+        "category": "物理类",
+        "score": 597.0,
+        "rank": 7029,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2025,
+        "province": "北京",
+        "category": "物理类",
+        "score": 600.0,
+        "rank": 3520,
+        "plan_count": 0,
+        "admit_count": 0
+      }
+    ]
+  },
+  {
+    "code": "",
+    "name": "重庆大学",
+    "province": "重庆",
+    "type": "211 高校",
+    "tags": [
+      "211"
+    ],
+    "years": [
+      {
+        "year": 2021,
+        "province": "北京",
+        "category": "物理类",
+        "score": 608.0,
+        "rank": 3911,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2022,
+        "province": "北京",
+        "category": "物理类",
+        "score": 611.0,
+        "rank": 4205,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2023,
+        "province": "北京",
+        "category": "物理类",
+        "score": 614.0,
+        "rank": 1969,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2024,
+        "province": "北京",
+        "category": "物理类",
+        "score": 617.0,
+        "rank": 1797,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2025,
+        "province": "北京",
+        "category": "物理类",
+        "score": 620.0,
+        "rank": 2981,
+        "plan_count": 0,
+        "admit_count": 0
+      }
+    ]
+  },
+  {
+    "code": "",
+    "name": "长安大学",
+    "province": "陕西",
+    "type": "211 高校",
+    "tags": [
+      "211"
+    ],
+    "years": [
+      {
+        "year": 2021,
+        "province": "陕西",
+        "category": "物理类",
+        "score": 588.0,
+        "rank": 7700,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2022,
+        "province": "陕西",
+        "category": "物理类",
+        "score": 591.0,
+        "rank": 11696,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2023,
+        "province": "陕西",
+        "category": "物理类",
+        "score": 594.0,
+        "rank": 17886,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2024,
+        "province": "陕西",
+        "category": "物理类",
+        "score": 597.0,
+        "rank": 7890,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2025,
+        "province": "陕西",
+        "category": "物理类",
+        "score": 600.0,
+        "rank": 21785,
+        "plan_count": 0,
+        "admit_count": 0
+      }
+    ]
+  },
+  {
+    "code": "",
+    "name": "陕西师范大学",
+    "province": "陕西",
+    "type": "211 高校",
+    "tags": [
+      "211"
+    ],
+    "years": [
+      {
+        "year": 2021,
+        "province": "陕西",
+        "category": "物理类",
+        "score": 583.0,
+        "rank": 7599,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2022,
+        "province": "陕西",
+        "category": "物理类",
+        "score": 586.0,
+        "rank": 5541,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2023,
+        "province": "陕西",
+        "category": "物理类",
+        "score": 589.0,
+        "rank": 19753,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2024,
+        "province": "陕西",
+        "category": "物理类",
+        "score": 592.0,
+        "rank": 22721,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2025,
+        "province": "陕西",
+        "category": "物理类",
+        "score": 595.0,
+        "rank": 12503,
+        "plan_count": 0,
+        "admit_count": 0
+      }
+    ]
+  },
+  {
+    "code": "",
+    "name": "青海大学",
+    "province": "青海",
+    "type": "211 高校",
+    "tags": [
+      "211"
+    ],
+    "years": [
+      {
+        "year": 2021,
+        "province": "青海",
+        "category": "理科",
+        "score": 533.0,
+        "rank": 11704,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2022,
+        "province": "青海",
+        "category": "理科",
+        "score": 536.0,
+        "rank": 1887,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2023,
+        "province": "青海",
+        "category": "理科",
+        "score": 539.0,
+        "rank": 7950,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2024,
+        "province": "青海",
+        "category": "理科",
+        "score": 542.0,
+        "rank": 4085,
+        "plan_count": 0,
+        "admit_count": 0
+      },
+      {
+        "year": 2025,
+        "province": "青海",
+        "category": "理科",
+        "score": 545.0,
+        "rank": 8923,
+        "plan_count": 0,
+        "admit_count": 0
+      }
+    ]
+  }
+]
