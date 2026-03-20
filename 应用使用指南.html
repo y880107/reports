@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>高考志愿咨询系统 - 使用指南</title>
+    
+<style>
+    body { 
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; 
+        max-width: 900px; 
+        margin: 40px auto; 
+        padding: 20px; 
+        line-height: 1.6;
+        color: #333;
+    }
+    h1, h2, h3 { color: #2c3e50; }
+    h1 { border-bottom: 2px solid #3498db; padding-bottom: 10px; }
+    code { background: #f4f4f4; padding: 2px 6px; border-radius: 3px; }
+    pre { background: #f4f4f4; padding: 15px; border-radius: 5px; overflow-x: auto; }
+    blockquote { border-left: 4px solid #3498db; margin: 0; padding-left: 20px; color: #666; }
+    table { border-collapse: collapse; width: 100%; margin: 20px 0; }
+    th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
+    th { background: #3498db; color: white; }
+    tr:nth-child(even) { background: #f9f9f9; }
+    a { color: #3498db; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .meta { color: #999; font-size: 0.9em; margin-bottom: 20px; }
+</style>
+
+</head>
+<body>
+    <div class="meta">生成时间：2026-03-20 10:26</div>
+    <h1 id="-">高考志愿咨询系统 - 使用指南</h1>
+<h2 id="_1">🌐 应用访问地址</h2>
+<p><strong>主应用页面：</strong> https://y880107.github.io/reports/app/</p>
+<p><strong>报告列表页：</strong> https://y880107.github.io/reports/</p>
+<hr />
+<h2 id="_2">📋 三大功能场景</h2>
+<h3 id="1">场景 1: 🎯 目标学校咨询</h3>
+<p><strong>适用场景：</strong> 你有心仪的目标学校，想知道录取概率</p>
+<p><strong>输入条件：</strong>
+- 考生省份（如：江苏、浙江、广东等）
+- 科类（物理类/历史类/理科/文科）
+- 高考分数
+- 目标学校名称（如：东南大学）</p>
+<p><strong>输出内容：</strong>
+- 考生基本信息卡片
+- 目标学校匹配度分析（轻松录取/稳妥/冲刺）
+- 2026 年录取预测（冲刺档/稳妥档/保底档）
+- 近 5 年历史录取趋势图（分数 + 位次双轴图表）
+- 志愿填报建议</p>
+<hr />
+<h3 id="2">场景 2: 📚 推荐学校列表</h3>
+<p><strong>适用场景：</strong> 你不确定报什么学校，需要系统推荐</p>
+<p><strong>输入条件：</strong>
+- 考生省份
+- 科类
+- 高考分数</p>
+<p><strong>输出内容：</strong>
+- 推荐概览（冲刺/稳妥/保底学校数量统计）
+- 🚀 冲刺档学校列表（录取概率 40%-60%）
+- 🎯 稳妥档学校列表（录取概率 60%-80%）
+- 🛡️ 保底档学校列表（录取概率 80%+）
+- 每所学校包含：名称、所在地、类型、985/211 标签、预测位次</p>
+<hr />
+<h3 id="3">场景 3: 💭 高考回忆杀</h3>
+<p><strong>适用场景：</strong> 已毕业用户回忆当年高考，趣味分析</p>
+<p><strong>输入条件：</strong>
+- 考生省份
+- 科类
+- 当年高考分数
+- 毕业年份（2020-2025）
+- 当年实际报考的学校</p>
+<p><strong>输出内容：</strong>
+- 怀旧风格的报告设计
+- "那年的你"信息卡片
+- AI 分析：如果重新填报会怎样
+- 🎁 "血赚"学校发现（性价比超高的选择）
+- 💡 AI 碎碎念（温情的青春回忆寄语）</p>
+<hr />
+<h2 id="_3">🚀 使用流程</h2>
+<ol>
+<li><strong>打开应用</strong></li>
+<li>
+<p>访问 https://y880107.github.io/reports/app/</p>
+</li>
+<li>
+<p><strong>选择场景</strong></p>
+</li>
+<li>
+<p>点击顶部标签切换三个场景</p>
+</li>
+<li>
+<p><strong>填写信息</strong></p>
+</li>
+<li>根据提示填写必填字段</li>
+<li>
+<p>带 * 号为必填项</p>
+</li>
+<li>
+<p><strong>生成报告</strong></p>
+</li>
+<li>点击"🚀 生成报告"按钮</li>
+<li>
+<p>等待 1-2 秒分析报告</p>
+</li>
+<li>
+<p><strong>查看/下载报告</strong></p>
+</li>
+<li>在右侧查看完整报告</li>
+<li>点击"📥 下载报告"可打印或保存为 PDF</li>
+</ol>
+<hr />
+<h2 id="_4">📱 技术特性</h2>
+<ul>
+<li>✅ <strong>响应式设计</strong>：支持手机、平板、电脑访问</li>
+<li>✅ <strong>实时图表</strong>：使用 Chart.js 渲染交互式趋势图</li>
+<li>✅ <strong>离线可用</strong>：纯静态页面，无需服务器</li>
+<li>✅ <strong>24 小时可访问</strong>：部署在 GitHub Pages，全球 CDN 加速</li>
+<li>✅ <strong>隐私保护</strong>：所有计算在浏览器端完成，数据不上传</li>
+</ul>
+<hr />
+<h2 id="_5">🛠️ 本地开发</h2>
+<h3 id="_6">目录结构</h3>
+<pre><code>/home/admin/.openclaw/workspace/
+├── app/
+│   └── index.html          # 主应用页面
+├── reports/                 # 已生成的静态报告
+├── deploy-app.sh           # 应用部署脚本
+├── md2web.sh               # Markdown 转网页脚本
+└── deploy-config.sh        # GitHub 配置
+</code></pre>
+<h3 id="_7">本地测试</h3>
+<pre><code class="language-bash">cd /home/admin/.openclaw/workspace/app
+python3 -m http.server 8000
+# 访问 http://localhost:8000
+</code></pre>
+<h3 id="_8">部署更新</h3>
+<pre><code class="language-bash">cd /home/admin/.openclaw/workspace
+bash deploy-app.sh
+</code></pre>
+<hr />
+<h2 id="_9">📊 数据说明</h2>
+<p><strong>当前为演示版本</strong>，使用模拟数据展示功能。</p>
+<p><strong>后续可接入：</strong>
+- 真实高考录取数据库
+- 各省教育考试院官方数据
+- 高校招生计划数据
+- AI 预测模型</p>
+<hr />
+<h2 id="_10">⚠️ 免责声明</h2>
+<ul>
+<li>本报告基于历史数据预测，仅供参考</li>
+<li>实际录取分数受多种因素影响（招生计划、报考人数、政策变化等）</li>
+<li>志愿填报请结合官方发布的《招生计划》和《录取统计》</li>
+<li>AI 建议不能替代专业咨询师意见</li>
+</ul>
+<hr />
+<h2 id="_11">📞 技术支持</h2>
+<ul>
+<li>GitHub 仓库：https://github.com/y880107/reports</li>
+<li>问题反馈：提交 Issue 或联系开发者</li>
+</ul>
+<hr />
+<p><strong>最后更新：</strong> 2026-03-20</p>
+</body>
+</html>
