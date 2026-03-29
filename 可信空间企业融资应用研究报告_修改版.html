@@ -30,7 +30,7 @@
 
 </head>
 <body>
-    <div class="meta">生成时间：2026-03-29 17:11</div>
+    <div class="meta">生成时间：2026-03-29 17:54</div>
     <h1 id="_1">公共数据赋能中小企业融资：基于可信数据空间的案例研究</h1>
 <p><strong>摘要</strong></p>
 <p>现阶段我国普惠金融发展面临银企信息不对称、中小微企业风控评估难、融资门槛高等核心问题。与此同时，公共数据在市场化配置过程中存在可信流通机制缺失、场景落地不畅、可持续运营模式不足等挑战。本文基于数据要素市场化改革背景，采用理论剖析与案例研究方法，围绕公共数据赋能普惠金融企业贷款展开系统研究。首先明确数据可信空间的核心内涵与功能架构，其次梳理信贷领域数据需求并构建科学化企业评估体系，再次设计公共数据合规流通路径，最后构建政府引导与市场化运作相结合的可持续运营模式。研究表明，依托可信数据空间实现公共数据合规赋能，可有效降低银企信息不对称、优化信贷风控逻辑、降低融资成本。构建兼顾普惠性与盈利性的运营模式，可为数据要素场景化落地提供实践参考。</p>
@@ -224,7 +224,58 @@
 <p><strong>指标层</strong>。在主题层基础上，通过计算、衍生、加工，形成企业风险指标。例如，基于纳税数据计算"纳税增长率"、"纳税连续性"等指标，基于用电数据计算"用电稳定性"、"用电增长率"等指标。指标层数据产品是风控模型的直接输入，具有明确的业务含义和计算逻辑。</p>
 <p>主题层和指标层作为数据产品进入可信空间，用于支撑业务生产应用。数据产品化使政务数据从原始数据转化为可直接使用的业务资产，提升了数据应用效率。</p>
 <p><strong>图 4-2 数据治理四层架构流程图</strong></p>
-<p><img alt="数据治理四层架构流程图" src="../images/data_governance_flow.svg" /></p>
+<div style="overflow-x: auto;">
+<svg width="900" height="500" xmlns="http://www.w3.org/2000/svg" style="background: white;">
+  <rect x="50" y="50" width="800" height="80" rx="10" fill="#e1f5ff" stroke="#333" stroke-width="2"/>
+  <text x="450" y="75" text-anchor="middle" font-size="16" font-weight="bold" font-family="Arial">贴源层</text>
+  <rect x="100" y="90" width="120" height="30" rx="5" fill="#e1f5ff" stroke="#333"/>
+  <text x="160" y="110" text-anchor="middle" font-size="12" font-family="Arial">税务数据</text>
+  <rect x="240" y="90" width="120" height="30" rx="5" fill="#e1f5ff" stroke="#333"/>
+  <text x="300" y="110" text-anchor="middle" font-size="12" font-family="Arial">市监数据</text>
+  <rect x="380" y="90" width="120" height="30" rx="5" fill="#e1f5ff" stroke="#333"/>
+  <text x="440" y="110" text-anchor="middle" font-size="12" font-family="Arial">社保数据</text>
+  <rect x="520" y="90" width="120" height="30" rx="5" fill="#e1f5ff" stroke="#333"/>
+  <text x="580" y="110" text-anchor="middle" font-size="12" font-family="Arial">电力数据</text>
+  <rect x="660" y="90" width="120" height="30" rx="5" fill="#e1f5ff" stroke="#333"/>
+  <text x="720" y="110" text-anchor="middle" font-size="12" font-family="Arial">其他委办厅局</text>
+  <line x1="450" y1="130" x2="450" y2="150" stroke="#333" stroke-width="2"/>
+  <polygon points="445,150 450,160 455,150" fill="#333"/>
+  <rect x="50" y="160" width="800" height="80" rx="10" fill="#fff3e1" stroke="#333" stroke-width="2"/>
+  <text x="450" y="185" text-anchor="middle" font-size="16" font-weight="bold" font-family="Arial">基础层</text>
+  <rect x="150" y="200" width="180" height="30" rx="5" fill="#fff3e1" stroke="#333"/>
+  <text x="240" y="220" text-anchor="middle" font-size="12" font-family="Arial">统一企业身份主键</text>
+  <rect x="360" y="200" width="180" height="30" rx="5" fill="#fff3e1" stroke="#333"/>
+  <text x="450" y="220" text-anchor="middle" font-size="12" font-family="Arial">物理清洗</text>
+  <rect x="570" y="200" width="180" height="30" rx="5" fill="#fff3e1" stroke="#333"/>
+  <text x="660" y="220" text-anchor="middle" font-size="12" font-family="Arial">标准化处理</text>
+  <line x1="450" y1="240" x2="450" y2="260" stroke="#333" stroke-width="2"/>
+  <polygon points="445,260 450,270 455,260" fill="#333"/>
+  <rect x="50" y="270" width="800" height="80" rx="10" fill="#e8f5e9" stroke="#333" stroke-width="2"/>
+  <text x="450" y="295" text-anchor="middle" font-size="16" font-weight="bold" font-family="Arial">主题层</text>
+  <rect x="150" y="310" width="180" height="30" rx="5" fill="#e8f5e9" stroke="#333"/>
+  <text x="240" y="330" text-anchor="middle" font-size="12" font-family="Arial">企业经营主题</text>
+  <rect x="360" y="310" width="180" height="30" rx="5" fill="#e8f5e9" stroke="#333"/>
+  <text x="450" y="330" text-anchor="middle" font-size="12" font-family="Arial">企业信用主题</text>
+  <rect x="570" y="310" width="180" height="30" rx="5" fill="#e8f5e9" stroke="#333"/>
+  <text x="660" y="330" text-anchor="middle" font-size="12" font-family="Arial">关联风险主题</text>
+  <line x1="450" y1="350" x2="450" y2="370" stroke="#333" stroke-width="2"/>
+  <polygon points="445,370 450,380 455,370" fill="#333"/>
+  <rect x="50" y="380" width="800" height="80" rx="10" fill="#fce4ec" stroke="#333" stroke-width="2"/>
+  <text x="450" y="405" text-anchor="middle" font-size="16" font-weight="bold" font-family="Arial">指标层</text>
+  <rect x="150" y="420" width="180" height="30" rx="5" fill="#fce4ec" stroke="#333"/>
+  <text x="240" y="440" text-anchor="middle" font-size="12" font-family="Arial">经营稳定性指标</text>
+  <rect x="360" y="420" width="180" height="30" rx="5" fill="#fce4ec" stroke="#333"/>
+  <text x="450" y="440" text-anchor="middle" font-size="12" font-family="Arial">经营成长性指标</text>
+  <rect x="570" y="420" width="180" height="30" rx="5" fill="#fce4ec" stroke="#333"/>
+  <text x="660" y="440" text-anchor="middle" font-size="12" font-family="Arial">信用状况指标</text>
+  <line x1="450" y1="460" x2="450" y2="480" stroke="#333" stroke-width="2"/>
+  <polygon points="445,480 450,490 455,480" fill="#333"/>
+  <rect x="300" y="490" width="300" height="50" rx="10" fill="#f3e5f5" stroke="#9c27b0" stroke-width="3"/>
+  <text x="450" y="510" text-anchor="middle" font-size="14" font-weight="bold" font-family="Arial">进入可信空间</text>
+  <text x="450" y="530" text-anchor="middle" font-size="14" font-family="Arial">支撑业务应用</text>
+</svg>
+</div>
+
 <p>数据治理四层架构说明：
 - <strong>贴源层</strong>：直接对接各委办厅局原始数据源，保持数据原貌，进行数据物理清洗（乱码、空值、关联主键清洗）和覆盖度分析。
 - <strong>基础层</strong>：进行统一企业身份主键关联（统一社会信用代码）、物理清洗（去重、纠错、补全）、标准化处理（定义数据格式和码值规范、设计各部委数据源的标准化业务字段）。
@@ -237,7 +288,34 @@
 <h4 id="423">4.2.3 数据流转流程</h4>
 <p>数据流转遵循数据归集、数据清洗、指标计算、模型评分、结果输出的流程。数据归集指各委办厅局通过数据连接器将数据接入平台，采用增量同步方式，确保数据时效性。数据清洗指对原始数据进行去重、纠错、补全等处理，提升数据质量。指标计算指基于清洗后数据，计算各项评估指标。模型评分指将指标输入风控模型，输出企业信用评分和评级结果。结果输出指经企业授权后，将评分结果输出给金融机构，原始数据不出域。</p>
 <p><strong>图 4-1 数据流转流程图</strong></p>
-<p><img alt="数据流转流程图" src="../images/data_flow.svg" /></p>
+<div style="overflow-x: auto;">
+<svg width="800" height="150" xmlns="http://www.w3.org/2000/svg" style="background: white;">
+  <rect x="20" y="50" width="120" height="60" rx="10" fill="#e3f2fd" stroke="#333" stroke-width="2"/>
+  <text x="80" y="75" text-anchor="middle" font-size="14" font-family="Arial">数据归集</text>
+  <text x="80" y="95" text-anchor="middle" font-size="10" font-family="Arial">20 个委办厅局</text>
+  <line x1="140" y1="80" x2="160" y2="80" stroke="#333" stroke-width="2"/>
+  <polygon points="160,75 170,80 160,85" fill="#333"/>
+  <rect x="170" y="50" width="120" height="60" rx="10" fill="#fff3e0" stroke="#333" stroke-width="2"/>
+  <text x="230" y="75" text-anchor="middle" font-size="14" font-family="Arial">数据清洗</text>
+  <text x="230" y="95" text-anchor="middle" font-size="10" font-family="Arial">去重/纠错/补全</text>
+  <line x1="290" y1="80" x2="310" y2="80" stroke="#333" stroke-width="2"/>
+  <polygon points="310,75 320,80 310,85" fill="#333"/>
+  <rect x="340" y="50" width="120" height="60" rx="10" fill="#e8f5e9" stroke="#333" stroke-width="2"/>
+  <text x="400" y="75" text-anchor="middle" font-size="14" font-family="Arial">指标计算</text>
+  <text x="400" y="95" text-anchor="middle" font-size="10" font-family="Arial">计算评估指标</text>
+  <line x1="460" y1="80" x2="480" y2="80" stroke="#333" stroke-width="2"/>
+  <polygon points="480,75 490,80 480,85" fill="#333"/>
+  <rect x="510" y="50" width="120" height="60" rx="10" fill="#fce4ec" stroke="#333" stroke-width="2"/>
+  <text x="570" y="75" text-anchor="middle" font-size="14" font-family="Arial">模型评分</text>
+  <text x="570" y="95" text-anchor="middle" font-size="10" font-family="Arial">输出信用评分</text>
+  <line x1="630" y1="80" x2="650" y2="80" stroke="#333" stroke-width="2"/>
+  <polygon points="650,75 660,80 650,85" fill="#333"/>
+  <rect x="680" y="50" width="120" height="60" rx="10" fill="#f3e5f5" stroke="#333" stroke-width="2"/>
+  <text x="740" y="75" text-anchor="middle" font-size="14" font-family="Arial">结果输出</text>
+  <text x="740" y="95" text-anchor="middle" font-size="10" font-family="Arial">经授权输出</text>
+</svg>
+</div>
+
 <p>数据流转流程说明：数据从 20 个委办厅局通过增量同步方式接入平台，经过数据清洗（去重、纠错、补全）提升数据质量，然后计算各项评估指标，输入风控模型进行评分，最终经企业授权后将评分结果输出给金融机构，原始数据不出域。</p>
 <h3 id="42_1">4.2 指标体系设计</h3>
 <h4 id="421_1">4.2.1 设计原则</h4>
@@ -468,7 +546,34 @@
 <p><strong>模型参数固化与趋势监控</strong>。全部企业批量评分后，模型使用固定该时间点的分布参数（某时间段各信用等级的通过率、违约率），这样后续即可监控各等级客群信用变化趋势，也可以参考各信用等级对应的违约率，为政府平台后续引入风险补偿措施提供运营参考。</p>
 <p><strong>脱敏说明</strong>。出于商业机密保护考虑，本节未披露具体的通过率数值、客群占比、评分阈值等敏感信息，仅阐述验证逻辑和方法论。实际项目中，这些参数通过与金融机构签订保密协议的方式进行管理和使用。</p>
 <p><strong>图 4-4 客群分层验证流程图</strong></p>
-<p><img alt="客群分层验证流程图" src="../images/verification_flow.svg" /></p>
+<div style="overflow-x: auto;">
+<svg width="900" height="200" xmlns="http://www.w3.org/2000/svg" style="background: white;">
+  <rect x="50" y="50" width="150" height="100" rx="10" fill="#e3f2fd" stroke="#333" stroke-width="2"/>
+  <text x="125" y="95" text-anchor="middle" font-size="14" font-family="Arial">步骤 1</text>
+  <text x="125" y="120" text-anchor="middle" font-size="14" font-family="Arial">平台批量评级</text>
+  <line x1="200" y1="100" x2="220" y2="100" stroke="#333" stroke-width="2"/>
+  <polygon points="220,95 230,100 220,105" fill="#333"/>
+  <rect x="240" y="50" width="150" height="100" rx="10" fill="#fff3e0" stroke="#333" stroke-width="2"/>
+  <text x="315" y="95" text-anchor="middle" font-size="14" font-family="Arial">步骤 2</text>
+  <text x="315" y="120" text-anchor="middle" font-size="14" font-family="Arial">推算评分阈值</text>
+  <line x1="390" y1="100" x2="410" y2="100" stroke="#333" stroke-width="2"/>
+  <polygon points="410,95 420,100 410,105" fill="#333"/>
+  <rect x="430" y="50" width="150" height="100" rx="10" fill="#e8f5e9" stroke="#333" stroke-width="2"/>
+  <text x="505" y="95" text-anchor="middle" font-size="14" font-family="Arial">步骤 3</text>
+  <text x="505" y="120" text-anchor="middle" font-size="14" font-family="Arial">筛选推荐名单</text>
+  <line x1="580" y1="100" x2="600" y2="100" stroke="#333" stroke-width="2"/>
+  <polygon points="600,95 610,100 600,105" fill="#333"/>
+  <rect x="620" y="50" width="150" height="100" rx="10" fill="#fce4ec" stroke="#333" stroke-width="2"/>
+  <text x="695" y="95" text-anchor="middle" font-size="14" font-family="Arial">步骤 4</text>
+  <text x="695" y="120" text-anchor="middle" font-size="14" font-family="Arial">银行对比验证</text>
+  <line x1="770" y1="100" x2="790" y2="100" stroke="#333" stroke-width="2"/>
+  <polygon points="790,95 800,100 790,105" fill="#333"/>
+  <rect x="810" y="50" width="150" height="100" rx="10" fill="#f3e5f5" stroke="#333" stroke-width="2"/>
+  <text x="885" y="95" text-anchor="middle" font-size="14" font-family="Arial">步骤 5</text>
+  <text x="885" y="120" text-anchor="middle" font-size="14" font-family="Arial">效果统计评估</text>
+</svg>
+</div>
+
 <p>客群分层验证流程说明：一是平台模型对全量企业每月批量评级，统计评分分布。二是根据银行提供的客群经验数据推算评分阈值。三是筛选符合阈值的企业名单推送给银行。四是银行将推荐客户与本行风险标签对比验证。五是统计通过率、重合率等指标评估模型效果。</p>
 <h4 id="443">4.4.3 验证样本说明</h4>
 <p>模型验证基于 2024 年 1 月至 2025 年 12 月期间的 4000 余客户样本。样本行业分布为制造业 35%、批发零售业 25%、服务业 20%、其他 20%。企业规模分布为微型企业 45%、小型企业 35%、中型企业 20%。地域分布覆盖该省 13 个地市。</p>
